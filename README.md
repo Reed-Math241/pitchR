@@ -9,7 +9,8 @@
 
 <!-- badges: end -->
 
-The goal of XXX is to …
+The goal of XXX is to … figure out why the blazers are the worst team in
+the nba
 
 ## Installation
 
