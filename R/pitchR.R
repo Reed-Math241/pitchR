@@ -1,10 +1,7 @@
 #' MLB Pitcher Statistics
 #' 
-#' Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2015-2019.
+#' Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2015-2020.
 #' 
-#'@docType data
-#' @name pitchR
-#' @usage data(pitchR)
 #' @format A tibble with 457 rows and 31 variables:
 #' \describe{
 #' \item{\code{Pitches}}{ Total number of pitches thrown}
