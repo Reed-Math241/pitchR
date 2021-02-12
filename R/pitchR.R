@@ -1,6 +1,6 @@
 #' MLB Pitcher Statistics
 #' 
-#' Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2015-2020.
+#' Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2015-2019.
 #' 
 #' @format A tibble with 457 rows and 31 variables:
 #' \describe{
@@ -37,6 +37,5 @@
 #' }
 #' 
 #' 
-#' @source {Data collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the "Math 241" final project in order to model future ERA and salary based off current statistics. The basic counting statistics was taken from Sean Lahman's baseball database, Statcast data was downloaded via baseballsavant, the salary was scraped from Sportrac. For a more in-depth explanation of many of these variables see} \url{<http://m.mlb.com/glossary/>}
-#' 
+#' @source {Data collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the "Math 241" final project in order to model future ERA and salary based off current statistics. The basic counting statistics was taken from Sean Lahman's baseball database, Statcast data was downloaded via baseballsavant, the salary was scraped from Sportrac. For a more in-depth explanation of many of these variables see}
 "pitchR"
