@@ -55,20 +55,41 @@ data_pull <- function(year){
 salary18 <- data_pull(2018)
 salary19 <- data_pull(2019)
 salary20 <- data_pull(2020)
-salary21 <- data_pull(2021)
 
-finalsalary <- rbind(salary18, salary19, salary20, salary21)
 
 ## ----------------------------------------------------------------------------------------------------
 
 ## statcast
 
-stats18 <- read_csv("/Users/joshuayamamoto/Downloads/savant_data-7.csv") %>% 
-  select(pitches:release_extension)
+savant18 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2018.csv") %>% 
+  dplyr::select(pitches:release_extension)
 
-stats19 <- read_csv("/Users/joshuayamamoto/Downloads/savant_data-8.csv") %>%
-  select(pitches:release_extension)
+savant19 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2019.csv") %>% 
+  dplyr::select(pitches:release_extension)
+
+savant20 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2020.csv") %>% 
+  dplyr::select(pitches:release_extension)
 
 
 
-usethis::use_data(DATASET, overwrite = TRUE)
+## ----------------------------------------------------------------------------------------------------
+## joining data
+
+full18 <- salary18 %>% 
+  left_join(savant18, by = c("name" = "player_name")) %>% 
+  filter(!is.na(pitches))
+
+full19 <- salary19 %>% 
+  left_join(savant19, by = c("name" = "player_name")) %>% 
+  filter(!is.na(pitches))
+
+full20 <- salary20 %>% 
+  left_join(savant20, by = c("name" = "player_name")) %>% 
+  filter(!is.na(pitches))
+
+## ----------------------------------------------------------------------------------------------------
+## final data
+
+pitchR <- rbind(full18, full19, full20)
+
+usethis::use_data(pitchR, overwrite = TRUE)
