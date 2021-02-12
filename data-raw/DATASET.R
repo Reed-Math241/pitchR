@@ -1,10 +1,5 @@
 ## code to prepare `DATASET` dataset goes here
 
-library(tidyverse)
-library(rvest)
-library(janitor)
-library(glue)
-
 ## getting team names
 
 team_url <- "https://www.spotrac.com/mlb/payroll/"
@@ -67,6 +62,8 @@ finalsalary <- rbind(salary18, salary19, salary20, salary21)
 ## ----------------------------------------------------------------------------------------------------
 
 ## statcast
+
+
 
 
 
