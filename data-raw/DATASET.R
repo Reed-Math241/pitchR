@@ -92,4 +92,7 @@ full20 <- salary20 %>%
 
 pitchR <- rbind(full18, full19, full20)
 
+pitchR <- dplyr::select(pitchR, c(-Year, -total_pitches, -pitch_percent, -eff_min_vel))
+
 usethis::use_data(pitchR, overwrite = TRUE)
+
