@@ -14,6 +14,6 @@
 pitchR
 }
 \description{
-Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2015-2019.
+Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2018-2020.
 }
 \keyword{datasets}
