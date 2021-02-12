@@ -63,7 +63,11 @@ finalsalary <- rbind(salary18, salary19, salary20, salary21)
 
 ## statcast
 
+stats18 <- read_csv("/Users/joshuayamamoto/Downloads/savant_data-7.csv") %>% 
+  select(pitches:release_extension)
 
+stats19 <- read_csv("/Users/joshuayamamoto/Downloads/savant_data-8.csv") %>%
+  select(pitches:release_extension)
 
 
 
