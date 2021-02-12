@@ -1,14 +1,15 @@
 #' MLB Pitcher Statistics
 #' 
-#' Basic counting statistics, advanced, Sabermetric analytics, and salaries for starting MLB pitchers from 2018-2020.
+#' Sabermetric analytics and salaries for starting MLB pitchers from 2018-2020.
 #' 
-#' @format A tibble of N observations and the following 22 variables:
+#' @format A tibble of N observations and the following 23 variables:
 #' \describe{
-#'  \item{pitches	}{Total number of pitches thrown}
-#'  \item{player_id}{Player MLB ID}
-#'  \item{player_name}{Pitcher name}
+#'  \item{name}{Pitcher name}
+#'  \item{salary}{Pitcher salary (US dollars)}
 #'  \item{year}{MLB season}
-#'  \item{ba	}{Batting average against}
+#'  \item{pitches}{Total number of pitches thrown}
+#'  \item{player_id}{Player MLB ID}
+#'  \item{ba}{Batting average against}
 #'  \item{iso}{Isolated power against, only counts extra base hits (doubles, triples, home runs)}
 #'  \item{babip}{Batting average on balls in play against}
 #'  \item{slg}{Slugging percentage against, represents the total number of bases a player records per at-bat}
@@ -24,7 +25,7 @@
 #'  \item{effective_speed	}{ Average velocity (MPH) after accounting for pitcher extension on the mound}
 #'  \item{whiffs}{ Total number of times batters swung and whiffed on the player's pitches}
 #'  \item{swings}{ Total number of times batters swung at the player's pitches}
-#'  \item{takes	}{ Total number of times batters "took" the pitch by not swinging at the ball}
+#'  \item{takes}{ Total number of times batters "took" the pitch by not swinging at the ball}
 #'  \item{release_extension}{ How far off the mound a pitcher releases the pitch (feet)}
 #'   }
 #' 
