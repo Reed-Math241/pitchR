@@ -5,8 +5,8 @@
 #' @docType data
 #' @name pitchR
 #' @usage data(pitchR)
-#' @format  A data frame with 457 observations on the following 36 variables. Each observational unit in our dataset represents the season of an individual MLB pitcher between 2015 and 2019.
-#' \itemize{
+#' @format A tibble with 457 rows and 36 variables:
+#' \describe{
 #' \item{\code{Pitches}}{ Total number of pitches thrown}
 #' \item{\code{Pitcher}}{ Pitcher name}
 #' \item{\code{Year}}{ MLB season}
@@ -43,8 +43,6 @@
 #' \item{\code{ΔSalary	}}{ Change in pitcher salary from current season to the next}
 #' \item{\code{luck_adj_ERA	}}{ Raw pitcher ERA adjusted with variously-weighted luck-reversion statistics}
 #' }
-#' @source 
-#' Data collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the "Math 241" final project in order to model future ERA and salary based off current statistics. The basic counting statistics was taken from Sean Lahman's baseball database, Statcast data was downloaded via baseballsavant, the salary was scraped from Sportrac. 
-#' For a more in-depth explanation of many of these variables see: 
-#' <http://m.mlb.com/glossary/>
+#' @source {Data collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the "Math 241" final project in order to model future ERA and salary based off current statistics. The basic counting statistics was taken from Sean Lahman's baseball database, Statcast data was downloaded via baseballsavant, the salary was scraped from Sportrac.} 
+#' @source {For a more in-depth explanation of many of these variables see: } \url{<http://m.mlb.com/glossary/>}
 "pitchR"
