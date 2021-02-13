@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+Hi 
 # Insert Package Name
 
 <!-- badges: start -->
@@ -33,9 +34,7 @@ devtools::install_github("Reed-Math241/pkgDemo")
 ## Example
 
 
-```{r example}
-library(pkgDemo)
-```
+
 
 
 
