@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ```
 
 
-# pitchR <img src=https://github.com/Reed-Math241/pkgGrpq/blob/master/figs/IMG_0175.png" align="right" width=125 />
+# pitchR  <img src= "https://github.com/Reed-Math241/pkgGrpq/blob/master/figs/IMG_0175.png" align="right" width=125 />
 
 
 <!-- badges: start -->
