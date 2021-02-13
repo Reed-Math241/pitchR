@@ -3,14 +3,15 @@
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
-Hi \# Insert Package Name
+# pitchR
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of XXX is to … figure out why the blazers are the worst team in
-the nba
+The goal of pitchR is to create a accessible dataset with advanced
+pitcher analytics and salaries. When we did a project last semester we
+noticed that there wasn’t a similar dataset.
 
 ## Installation
 
