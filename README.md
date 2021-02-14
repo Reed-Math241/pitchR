@@ -34,7 +34,7 @@ Data were collected and made available by
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with 23 variables and 579
+The `pitchR` package contains one dataset, with 23 variables and 662
 observations.
 
 ``` r
