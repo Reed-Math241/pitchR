@@ -12,6 +12,7 @@ editor_options:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
+  fig.path = "man/figures/README-",
   out.width = "75%",
   warning = FALSE,
   message = FALSE,
@@ -99,7 +100,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ```
 
-```{r pitcher_woba, echo=FALSE}
+```{r pitcher_woba, echo=FALSE, warning=FALSE}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(
