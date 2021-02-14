@@ -66,3 +66,62 @@ head(pitchR)
 ```
 
 ## Example
+
+You can find these and more code examples for exploring pitchR in
+`vignette("examples")`.
+
+Penguins are fun to summarize\! For example:
+
+``` r
+library(tidyverse)
+pitchR %>% 
+  count(year)
+#> # A tibble: 3 x 2
+#>    year     n
+#>   <dbl> <int>
+#> 1  2018   318
+#> 2  2019   276
+#> 3  2020   238
+pitchR %>% 
+  group_by(year) %>% 
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+#> # A tibble: 3 x 22
+#>    year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
+#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2018 6.50e6   1867.   548950. 0.254 0.171 0.294 0.426 0.324 0.332 0.255 107. 
+#> 2  2019 7.23e6   2015.   562533. 0.257 0.189 0.301 0.447 0.324 0.330 0.257 118. 
+#> 3  2020 6.87e6    786.   579673. 0.245 0.175 0.288 0.420 0.312 0.312 0.250  43.8
+#> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
+#> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
+#> #   swings <dbl>, takes <dbl>, release_extension <dbl>
+```
+
+Pitchers are fun to visualize\! For example:
+<img src="man/figures/README-mass-flipper-1.png" width="75%" />
+
+``` r
+pitcher <- pitchR %>%
+  group_by(name) %>%
+  summarize(ba = mean(ba), xba = mean(xba), salary = mean (salary))
+#> `summarise()` ungrouping output (override with `.groups` argument)
+
+pitcher_woba <- ggplot(data = pitcher,
+                       aes(x = ba,
+                           y = xba)) +
+  geom_point(aes(color = salary)) +
+  geom_abline(slope = 1, intercept = 0) +
+  theme_minimal()+
+  scale_color_distiller(direction = -1, palette = "YlGn") +
+    labs(title = "Batting Average vs Expected Batting Average by Pitcher",
+       subtitle = "Batting Average: hits/# of at bats, expected values are derived by comparing the exit velocity and launch angle of batted balls against historical outcomes",
+       x = "Batting Average",
+       y = "Expected Batting Average") +
+   theme(legend.background = element_rect(fill = "white", color = NA),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot")
+
+pitcher_woba
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
