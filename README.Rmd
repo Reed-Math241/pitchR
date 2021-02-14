@@ -44,7 +44,7 @@ pitcher <- pitchR %>%
     )
 
 ggplot(data = pitcher, aes(x = ba, y = xba)) +
-  geom_point(aes(color = salary), size = 4) +
+  geom_point(aes(color = salary), size = 5) +
   geom_abline(slope = 1, intercept = 0, alpha = 0.3, size = 3) +
   scale_color_gradient(low = "gray80", high = "turquoise4") +
   labs(
@@ -52,7 +52,8 @@ ggplot(data = pitcher, aes(x = ba, y = xba)) +
     subtitle = "Batting Average: hits/# of at bats, expected values are derived by
 comparing the exit velocity and launch angle of batted balls against historical outcomes",
     x = "Batting Average",
-    y = "Expected Batting Average"
+    y = "Expected Batting Average",
+    color = "Salary"
     ) +
   theme_minimal() +
   theme(
@@ -70,7 +71,7 @@ comparing the exit velocity and launch angle of batted balls against historical 
 
 ## Installation
 
-The development version of pitchR is available from [GitHub](https://github.com/) with:
+The development version of `pitchR` is available from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -81,14 +82,14 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and the [Savant](https://baseballsavant.mlb.com/statcast_search). The full scraping and cleaning process is documented [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with data on Pitchers from the 2018-2020 Seasons. 
+The `pitchR` package contains one dataset, with 23 variables and 572 observations.
 
 ```{r showdata}
 library(pitchR)
 data('pitchR')
 ``` 
 
-Here is a simplified version of the raw data; see `?pitchR` for more info: 
+Here is a simplified version of the raw data; see `?pitchR` for more information: 
 
 ```{r example-pitchR}
 head(pitchR)
@@ -96,7 +97,7 @@ head(pitchR)
 
 ## Examples
 
-Pitchers are fun to summarize! For example:
+By virtue of `pitchR` having data from 3 different years, there is a lot of summarizing and comparing the data that can be done. For example:
 
 ```{r example, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -109,7 +110,7 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
-Pitchers are fun to visualize! For example:
+We can visualize distributions by year!
 
 ```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8, include=FALSE}
 
@@ -146,7 +147,8 @@ pitchR %>%
   scale_fill_manual(values = c("grey65", "midnightblue", "cyan4")) +
   theme_minimal() +
   labs(
-    color = "Year"
+    title = "woba distributions by year",
+    fill = "Year"
   ) +
   theme(
     plot.title.position = "plot",

@@ -18,7 +18,7 @@ statistics\!
 
 ## Installation
 
-The development version of pitchR is available from
+The development version of `pitchR` is available from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -34,8 +34,8 @@ Data were collected and made available by
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with data on Pitchers from
-the 2018-2020 Seasons.
+The `pitchR` package contains one dataset, with 23 variables and 572
+observations.
 
 ``` r
 library(pitchR)
@@ -43,7 +43,7 @@ data('pitchR')
 ```
 
 Here is a simplified version of the raw data; see `?pitchR` for more
-info:
+information:
 
 ``` r
 head(pitchR)
@@ -63,7 +63,8 @@ head(pitchR)
 
 ## Examples
 
-Pitchers are fun to summarize\! For example:
+By virtue of `pitchR` having data from 3 different years, there is a lot
+of summarizing and comparing the data that can be done. For example:
 
 ``` r
 library(tidyverse)
@@ -91,6 +92,6 @@ pitchR %>%
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
-Pitchers are fun to visualize\! For example:
+We can visualize distributions by year\!
 
 <img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
