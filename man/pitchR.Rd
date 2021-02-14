@@ -33,7 +33,7 @@ A tibble of 832 observations and the following 23 variables:
   }
 }
 \source{
-{Data originally collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the Math 243 final project in order to model future ERA and salary based off current statistics. The basic counting statistics was taken from Sean Lahman's baseball database, Statcast data was downloaded via baseballsavant, the salary was scraped from Sportrac.}
+{Data originally collated by Riley Leonard, Andy Zhao, and Josh Yamamoto and used in the Math 243 final project in order to model future ERA and salary based off current statistics. Statcast data was downloaded via baseballsavant and the salary was scraped from Sportrac.}
 
 {For a more in-depth explanation of many of these variables see} 
 \url{http://m.mlb.com/glossary}
