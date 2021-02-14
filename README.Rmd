@@ -57,7 +57,7 @@ Here is a simplified version of the raw data; see `?pitchR` for more info:
 head(pitchR)
 ```
 
-## Example
+## Examples
 
 Pitchers are fun to summarize! For example:
 
@@ -71,7 +71,7 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize! For example:
-```{r pitcher_velocity, warning = FALSE, message = FALSE, echo = FALSE}
+```{r pitcher_velocity, echo = FALSE}
 pitcher_velocity <- ggplot(data = pitchR, 
                            aes(x = velocity, 
                                y = spin_rate))+
@@ -91,7 +91,7 @@ pitcher_velocity <- ggplot(data = pitchR,
 pitcher_velocity
 ```
 
-```{r pitcher_woba, warning = FALSE, message = FALSE, echo = FALSE}
+```{r pitcher_woba, echo = FALSE}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(ba = mean(ba), xba = mean(xba), salary = mean (salary))

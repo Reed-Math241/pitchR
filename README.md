@@ -65,7 +65,7 @@ head(pitchR)
 #> 6           85.49    356   1207  1182              5.56
 ```
 
-## Example
+## Examples
 
 Pitchers are fun to summarize\! For example:
 
