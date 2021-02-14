@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-The goal of pitchR is to create a accessible dataset with advanced pitcher analytics and salaries.  When we did a project last semester we noticed that there wasn't a similar dataset.
+The goal of pitchR is to create an accessible dataset with advanced pitcher statistics by season and their corresponding salaries.  This dataset contains statistics from the 2018 thru 2020 seasons.
 
 ## Installation
 
@@ -33,6 +33,24 @@ The development version of XXX is available from [GitHub](https://github.com/) w
 # install.packages("devtools")
 devtools::install_github("Reed-Math241/pkgDemo")
 ```
+
+## About the Data
+
+Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and the [Savant](https://baseballsavant.mlb.com/statcast_search).
+
+The pitchR package contains one dataset, with data on Pitchers from the 2018-2020 Seasons. 
+
+```{r showdata}
+library(pitchR)
+data(package = 'pitchR')
+``` 
+
+Here is a simplified version of the raw data; see `?pitchR` for more info: 
+
+```{r example-pitchR}
+head(pitchR)
+```
+
 ## Example
 
 
