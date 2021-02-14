@@ -15,7 +15,7 @@ dataset contains statistics from the 2018 thru 2020 seasons.
 
 ## Installation
 
-The development version of XXX is available from
+The development version of pitchR is available from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -66,9 +66,6 @@ head(pitchR)
 ```
 
 ## Example
-
-You can find these and more code examples for exploring pitchR in
-`vignette("examples")`.
 
 Pitchers are fun to summarize\! For example:
 
