@@ -7,15 +7,15 @@ output: github_document
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
 ```{r, include = FALSE}
-#knitr::opts_chunk$set(
-#  collapse = TRUE,
-#  comment = "#>",
-#  out.width = "75%",
-#  warning = FALSE,
-#  message = FALSE,
-#  fig.retina = 2,
-#  fig.align = 'center'
-#)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width = "75%",
+  warning = FALSE,
+  message = FALSE,
+  fig.retina = 2,
+  fig.align = 'center'
+)
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(pitchR)
@@ -46,14 +46,14 @@ Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/
 
 The pitchR package contains one dataset, with data on Pitchers from the 2018-2020 Seasons. 
 
-```{r showdata}
+```{r}
 library(pitchR)
 data('pitchR')
 ``` 
 
 Here is a simplified version of the raw data; see `?pitchR` for more info: 
 
-```{r example-pitchR}
+```{r}
 head(pitchR)
 ```
 
@@ -95,12 +95,6 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
     plot.caption.position = "plot"
     )
 ```
-
-```{r}
-ggplot(mtcars, aes(x = mpg, y = cyl)) +
-  geom_point()
-```
-
 
 ```{r pitcher_woba, echo=FALSE}
 pitcher <- pitchR %>%
