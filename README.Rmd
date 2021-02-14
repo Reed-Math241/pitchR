@@ -95,7 +95,7 @@ Here is a simplified version of the raw data; see `?pitchR` for more information
 head(pitchR, 3)
 ```
 
-Here's a breakdown of how much missing data we have by variable. We opted to keep observations with missing values in order to keep a full version of the salary data.
+Here is a breakdown of how much missing data we have by variable. We opted to keep observations with missing values in order to keep a full version of the salary data.
 
 ```{r missing-data, echo=FALSE, fig.width=14, fig.height=8}
 pitchR %>% 
@@ -104,8 +104,7 @@ pitchR %>%
   mutate(key = fct_reorder(key, value)) %>% 
   ggplot(aes(key, value, fill = value > .90)) +
   geom_col(
-    #fill = "midnightblue",
-    alpha = 0.5,
+    alpha = 0.3,
     color = NA,
     show.legend = F
   ) +
