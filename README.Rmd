@@ -111,12 +111,11 @@ pitchR %>%
 
 Pitchers are fun to visualize! For example:
 
-```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8}
+```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8, include=FALSE}
 
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(
-    aes(color = whiffs),
-    alpha = 0.4, 
+    aes(color = whiffs), 
     size = 4
     ) +
   scale_color_gradient(low = "cornsilk2", high = "turquoise4") +
@@ -140,13 +139,27 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ```
 
-
-
-```{r}
+```{r hist, fig.width=14, fig.height=8, echo=FALSE}
 pitchR %>% 
-  distinct(year, name, .keep_all = T) %>% 
-  filter(name == "Clayton Kershaw")
+  ggplot(aes(x = woba, fill = factor(year))) +
+  geom_density(position = "identity", alpha = 0.5, color = NA) +
+  scale_fill_manual(values = c("grey65", "midnightblue", "cyan4")) +
+  theme_minimal() +
+  labs(
+    color = "Year"
+  ) +
+  theme(
+    plot.title.position = "plot",
+    plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
+    plot.title = element_text(size = 25),
+    axis.text = element_text(size = 19),
+    axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
+    legend.key.size = unit(2, "cm"),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 20)
+  )
 ```
+
 
 
 

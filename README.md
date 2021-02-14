@@ -93,19 +93,4 @@ pitchR %>%
 
 Pitchers are fun to visualize\! For example:
 
-<img src="man/figures/README-pitcher_velocity-1-1.png" width="75%" style="display: block; margin: auto;" />
-
-``` r
-pitchR %>% 
-  distinct(year, name, .keep_all = T) %>% 
-  filter(name == "Clayton Kershaw")
-#> # A tibble: 3 x 23
-#>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
-#>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1 Clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
-#> 2 Clay… 3.10e7    2672    477132  2019 0.222 0.173 0.267 0.394 0.281 0.296 0.235
-#> 3 Clay… 3.10e7     888    477132  2020 0.194 0.171 0.232 0.365 0.247 0.263 0.217
-#> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
-#> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
-#> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
-```
+<img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
