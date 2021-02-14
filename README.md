@@ -19,7 +19,7 @@ statistics\!
 ## Installation
 
 The development version of `pitchR` is available from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/Reed-Math241/pkgGrpq) with:
 
 ``` r
 # install.packages("devtools")

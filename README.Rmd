@@ -71,7 +71,7 @@ comparing the exit velocity and launch angle of batted balls against historical 
 
 ## Installation
 
-The development version of `pitchR` is available from [GitHub](https://github.com/) with:
+The development version of `pitchR` is available from [GitHub](https://github.com/Reed-Math241/pkgGrpq) with:
 
 ``` r
 # install.packages("devtools")
