@@ -91,7 +91,7 @@ pitchR %>%
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
-Pitchers are fun to visualize\! For example
+Pitchers are fun to visualize\! For example:
 
 <img src="man/figures/README-pitcher_velocity-1-1.png" width="75%" style="display: block; margin: auto;" />
 

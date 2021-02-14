@@ -60,7 +60,7 @@ comparing the exit velocity and launch angle of batted balls against historical 
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
     plot.title = element_text(size = 25),
     axis.text = element_text(size = 19),
-    axis.title = element_text(size = 19, margin = margin(10, 5, 16, 5)),
+    axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
     legend.text = element_text(size = 15),
     legend.title = element_text(size = 20)
@@ -109,14 +109,15 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
-Pitchers are fun to visualize! For example
+Pitchers are fun to visualize! For example:
 
 ```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8}
 
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(
     aes(color = whiffs),
-    alpha = 0.4
+    alpha = 0.4, 
+    size = 4
     ) +
   scale_color_gradient(low = "cornsilk2", high = "turquoise4") +
   labs(
@@ -131,7 +132,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
     plot.title = element_text(size = 25),
     axis.text = element_text(size = 19),
-    axis.title = element_text(size = 19, margin = margin(10, 5, 16, 5)),
+    axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
     legend.text = element_text(size = 15),
     legend.title = element_text(size = 20)
