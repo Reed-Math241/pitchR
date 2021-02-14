@@ -83,25 +83,22 @@ savant20 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2020.csv") %>
 
 normalize_name <- function(data){
   data %>% 
-  mutate(name = str_remove_all(name, " "),
-         name = str_remove_all(name, "\\."),
-         name = str_remove_all(name, "-"),
-         name = str_to_lower(name))
+  dplyr::mutate(name = stringr::str_remove_all(name, " "),
+         name = stringr::str_remove_all(name, "\\."),
+         name = stringr::str_remove_all(name, "-"),
+         name = stringr::str_to_lower(name))
   }
 
 
 
 full18 <- normalize_name(salary18) %>% 
-  left_join(normalize_name(savant18), by = "name") %>% 
-  filter(!is.na(pitches))
+  dplyr::left_join(normalize_name(savant18), by = "name") 
 
 full19 <- normalize_name(salary19) %>% 
-  left_join(normalize_name(savant19), by = "name") %>% 
-  filter(!is.na(pitches))
+  dplyr::left_join(normalize_name(savant19), by = "name") 
 
 full20 <- normalize_name(salary20) %>% 
-  left_join(normalize_name(savant20), by = "name") %>% 
-  filter(!is.na(pitches))
+  dplyr::left_join(normalize_name(savant20), by = "name") 
 
 ## ----------------------------------------------------------------------------------------------------
 ## final data
