@@ -74,7 +74,7 @@ pitchR %>%
 
 Pitchers are fun to visualize! For example:
 
-```{r pitcher_velocity, echo=FALSE}
+```{r}
 
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(

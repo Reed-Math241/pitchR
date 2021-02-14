@@ -93,7 +93,29 @@ pitchR %>%
 
 Pitchers are fun to visualize\! For example:
 
-![](README_files/figure-gfm/pitcher_velocity-1.png)<!-- -->
+``` r
+ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
+  geom_point(
+    aes(color = whiffs),
+    alpha = 0.4
+    ) +
+  theme_minimal() +
+  scale_color_distiller(direction = -1, palette = "YlGn") +
+  labs(
+    title = "Velocity, Spin Rate, and Whiffs",
+    subtitle = "Whiffs: Total Number of times a batter swung and whiffed on the player's pitch",
+    x = "Velocity (MPH)",
+    y = "Spin Rate (Revolutions per Min.)"
+    ) +
+  theme(
+    legend.background = element_rect(fill = "white", color = NA),
+    plot.title.position = "plot",
+    plot.caption = element_text(hjust = 0, face = "italic"),
+    plot.caption.position = "plot"
+    )
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
     ## `summarise()` ungrouping output (override with `.groups` argument)
 
