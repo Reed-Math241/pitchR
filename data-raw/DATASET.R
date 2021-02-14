@@ -11,7 +11,10 @@ html_team <- team_url %>%
   janitor::make_clean_names() %>%
   tibble::as_tibble() %>%
   dplyr::mutate(value = str_replace_all(value, "_", "-")) %>%
-  dplyr::pull(value)
+  dplyr::pull(value) 
+
+html_team <- html_team[1:30]
+
 
 # function to pull salary and then player names and then join the two together
 
@@ -62,29 +65,42 @@ salary20 <- data_pull(2020)
 ## statcast
 
 savant18 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2018.csv") %>% 
-  dplyr::select(pitches:release_extension)
+  dplyr::select(pitches:release_extension) %>% 
+  dplyr::rename(name = player_name)
 
 savant19 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2019.csv") %>% 
-  dplyr::select(pitches:release_extension)
+  dplyr::select(pitches:release_extension) %>% 
+  dplyr::rename(name = player_name)
 
 savant20 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2020.csv") %>% 
-  dplyr::select(pitches:release_extension)
+  dplyr::select(pitches:release_extension) %>% 
+  dplyr::rename(name = player_name)
 
 
 
 ## ----------------------------------------------------------------------------------------------------
 ## joining data
 
-full18 <- salary18 %>% 
-  left_join(savant18, by = c("name" = "player_name")) %>% 
+normalize_name <- function(data){
+  data %>% 
+  mutate(name = str_remove_all(name, " "),
+         name = str_remove_all(name, "\\."),
+         name = str_remove_all(name, "-"),
+         name = str_to_lower(name))
+  }
+
+
+
+full18 <- normalize_name(salary18) %>% 
+  left_join(normalize_name(savant18), by = "name") %>% 
   filter(!is.na(pitches))
 
-full19 <- salary19 %>% 
-  left_join(savant19, by = c("name" = "player_name")) %>% 
+full19 <- normalize_name(salary19) %>% 
+  left_join(normalize_name(savant19), by = "name") %>% 
   filter(!is.na(pitches))
 
-full20 <- salary20 %>% 
-  left_join(savant20, by = c("name" = "player_name")) %>% 
+full20 <- normalize_name(salary20) %>% 
+  left_join(normalize_name(savant20), by = "name") %>% 
   filter(!is.na(pitches))
 
 ## ----------------------------------------------------------------------------------------------------
@@ -93,8 +109,7 @@ full20 <- salary20 %>%
 pitchR <- rbind(full18, full19, full20)
 
 pitchR <- pitchR %>% 
-  dplyr::select(c(-Year, -total_pitches, -pitch_percent, -eff_min_vel)) %>% 
-  dplyr::distinct(year, name, .keep_all = T)
+  dplyr::select(c(-Year, -total_pitches, -pitch_percent, -eff_min_vel))
 
 usethis::use_data(pitchR, overwrite = TRUE)
 

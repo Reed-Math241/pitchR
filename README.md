@@ -34,7 +34,7 @@ Data were collected and made available by
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with 23 variables and 572
+The `pitchR` package contains one dataset, with 23 variables and 579
 observations.
 
 ``` r
@@ -50,12 +50,12 @@ head(pitchR)
 #> # A tibble: 6 x 23
 #>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
 #>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1 Clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
-#> 2 Rich… 1.67e7    2104    448179  2018 0.219 0.181 0.272 0.4   0.297 0.309 0.229
-#> 3 Kent… 6.12e6    2051    628317  2018 0.24  0.159 0.323 0.399 0.304 0.292 0.225
-#> 4 Alex… 6.00e6    2443    622072  2018 0.247 0.116 0.295 0.363 0.288 0.295 0.244
-#> 5 Ross… 5.55e5    1999    548389  2018 0.257 0.174 0.324 0.431 0.309 0.272 0.223
-#> 6 Masa… 2.20e7    2398    547888  2018 0.24  0.182 0.286 0.422 0.307 0.311 0.247
+#> 1 clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
+#> 2 rich… 1.67e7    2104    448179  2018 0.219 0.181 0.272 0.4   0.297 0.309 0.229
+#> 3 hyun… 7.83e6    1238    547943  2018 0.221 0.14  0.282 0.362 0.268 0.278 0.228
+#> 4 kent… 6.12e6    2051    628317  2018 0.24  0.159 0.323 0.399 0.304 0.292 0.225
+#> 5 alex… 6.00e6    2443    622072  2018 0.247 0.116 0.295 0.363 0.288 0.295 0.244
+#> 6 ross… 5.55e5    1999    548389  2018 0.257 0.174 0.324 0.431 0.309 0.272 0.223
 #> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
 #> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
 #> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
@@ -74,9 +74,9 @@ pitchR %>%
 #> # A tibble: 3 x 2
 #>    year     n
 #>   <dbl> <int>
-#> 1  2018   226
-#> 2  2019   185
-#> 3  2020   161
+#> 1  2018   229
+#> 2  2019   187
+#> 3  2020   163
 
 pitchR %>% 
   group_by(year) %>% 
@@ -84,9 +84,9 @@ pitchR %>%
 #> # A tibble: 3 x 22
 #>    year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
 #>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1  2018 4.76e6   1721.   565129. 0.256 0.172 0.295 0.428 0.326 0.333 0.256  98.9
-#> 2  2019 5.54e6   1903.   578026. 0.259 0.192 0.302 0.451 0.327 0.332 0.259 111. 
-#> 3  2020 5.23e6    757.   595593. 0.243 0.174 0.285 0.417 0.311 0.312 0.249  41.7
+#> 1  2018 4.79e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
+#> 2  2019 5.62e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
+#> 3  2020 5.31e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
 #> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
 #> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>

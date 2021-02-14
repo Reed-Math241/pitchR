@@ -82,7 +82,7 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and the [Savant](https://baseballsavant.mlb.com/statcast_search). The full scraping and cleaning process is documented [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with 23 variables and 572 observations.
+The `pitchR` package contains one dataset, with 23 variables and 579 observations.
 
 ```{r showdata}
 library(pitchR)
