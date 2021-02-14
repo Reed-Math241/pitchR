@@ -29,7 +29,9 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 Data were collected and made available by
 [Spotrac](https://www.spotrac.com/mlb/payroll/) and the
-[Savant](https://baseballsavant.mlb.com/statcast_search).
+[Savant](https://baseballsavant.mlb.com/statcast_search). The full
+scraping and cleaning process is documented
+[here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
 The pitchR package contains one dataset, with data on Pitchers from the
 2018-2020 Seasons.
