@@ -31,7 +31,7 @@ library(pitchR)
 <!-- badges: end -->
 
 
-The goal of pitchR is to create an accessible dataset with advanced pitcher statistics by season and their corresponding salaries.  This dataset contains statistics from the 2018 thru 2020 seasons.
+The goal of pitchR is to create an accessible dataset with advanced pitcher statistics by season and their corresponding salaries.  This dataset contains statistics from the 2018, 2019, and 2020 seasons.
 
 ## Installation
 
@@ -76,7 +76,7 @@ pitchR %>%
 
 Pitchers are fun to visualize! For example:
 
-```{r pitcher_velocity, echo = FALSE}
+```{r pitcher_velocity, echo=FALSE}
 
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(
@@ -100,7 +100,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ```
 
-```{r pitcher_woba, echo = FALSE}
+```{r pitcher_woba, echo=FALSE}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(

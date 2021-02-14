@@ -11,7 +11,7 @@
 
 The goal of pitchR is to create an accessible dataset with advanced
 pitcher statistics by season and their corresponding salaries. This
-dataset contains statistics from the 2018 thru 2020 seasons.
+dataset contains statistics from the 2018, 2019, and 2020 seasons.
 
 ## Installation
 
