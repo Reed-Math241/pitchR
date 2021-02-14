@@ -34,8 +34,8 @@ Data were collected and made available by
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The pitchR package contains one dataset, with data on Pitchers from the
-2018-2020 Seasons.
+The `pitchR` package contains one dataset, with data on Pitchers from
+the 2018-2020 Seasons.
 
 ``` r
 library(pitchR)

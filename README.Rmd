@@ -33,7 +33,7 @@ The goal of `pitchR` is to provide an accessible dataset with advanced pitching 
 
 One exciting feature of the package is the inclusion of expected statistics:
 
-```{r pitcher_woba-1, echo=FALSE, warning=FALSE, fig.width=10, fig.height=8}
+```{r pitcher_woba-1, echo=FALSE, warning=FALSE, fig.width=14, fig.height=6}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(
@@ -74,7 +74,7 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and the [Savant](https://baseballsavant.mlb.com/statcast_search). The full scraping and cleaning process is documented [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The pitchR package contains one dataset, with data on Pitchers from the 2018-2020 Seasons. 
+The `pitchR` package contains one dataset, with data on Pitchers from the 2018-2020 Seasons. 
 
 ```{r showdata}
 library(pitchR)
