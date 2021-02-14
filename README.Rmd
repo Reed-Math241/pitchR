@@ -69,7 +69,7 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize! For example:
-```{r pitcher_velocity, warning = FALSE, message = FALSE, echo = FALSE, out.width='75%', fig.retina=2}
+```{r pitcher_velocity, warning = FALSE, message = FALSE, echo = FALSE}
 pitcher_velocity <- ggplot(data = pitchR, 
                            aes(x = velocity, 
                                y = spin_rate))+
@@ -89,7 +89,7 @@ pitcher_velocity <- ggplot(data = pitchR,
 pitcher_velocity
 ```
 
-```{r pitcher_woba, warning = FALSE, message = FALSE, echo = FALSE, out.width='75%', fig.retina=2}
+```{r pitcher_woba, warning = FALSE, message = FALSE, echo = FALSE}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(ba = mean(ba), xba = mean(xba), salary = mean (salary))

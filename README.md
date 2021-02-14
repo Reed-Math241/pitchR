@@ -97,6 +97,6 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize\! For example:
-<img src="man/figures/README-pitcher_velocity-1.png" width="75%" />
+<img src="man/figures/README-pitcher_velocity-1.png" width="100%" />
 
-<img src="man/figures/README-pitcher_woba-1.png" width="75%" />
+<img src="man/figures/README-pitcher_woba-1.png" width="100%" />
