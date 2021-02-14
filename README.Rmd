@@ -50,7 +50,7 @@ The pitchR package contains one dataset, with data on Pitchers from the 2018-202
 
 ```{r showdata}
 library(pitchR)
-data(package = 'pitchR')
+data('pitchR')
 ``` 
 
 Here is a simplified version of the raw data; see `?pitchR` for more info: 
@@ -94,7 +94,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   theme(
     legend.background = element_rect(fill = "white", color = NA),
     plot.title.position = "plot",
-    plot.caption = element_text(hjust = 0, face= "italic"),
+    plot.caption = element_text(hjust = 0, face = "italic"),
     plot.caption.position = "plot"
     )
 

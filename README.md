@@ -34,7 +34,7 @@ The pitchR package contains one dataset, with data on Pitchers from the
 
 ``` r
 library(pitchR)
-data(package = 'pitchR')
+data('pitchR')
 ```
 
 Here is a simplified version of the raw data; see `?pitchR` for more
