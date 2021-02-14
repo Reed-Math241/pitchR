@@ -42,27 +42,18 @@ info:
 
 ``` r
 head(pitchR)
-#>              name   salary pitches player_id year    ba   iso babip   slg  woba
-#> 1 Clayton Kershaw 35571428    2364    477132 2018 0.227 0.139 0.276 0.366 0.272
-#> 2       Rich Hill 16666666    2104    448179 2018 0.219 0.181 0.272 0.400 0.297
-#> 3     Kenta Maeda  6125000    2051    628317 2018 0.240 0.159 0.323 0.399 0.304
-#> 4       Alex Wood  6000000    2443    622072 2018 0.247 0.116 0.295 0.363 0.288
-#> 5  Ross Stripling   555000    1999    548389 2018 0.257 0.174 0.324 0.431 0.309
-#> 6 Masahiro Tanaka 22000000    2398    547888 2018 0.240 0.182 0.286 0.422 0.307
-#>   xwoba   xba hits abs launch_speed launch_angle spin_rate velocity
-#> 1 0.285 0.240  139 612         88.0          9.4      2456     86.7
-#> 2 0.309 0.229  108 493         88.8         15.7      2626     83.3
-#> 3 0.292 0.225  115 479         87.3         13.6      2261     86.8
-#> 4 0.295 0.244  143 579         88.1          8.6      1894     86.0
-#> 5 0.272 0.223  123 478         87.9         10.3      2313     87.2
-#> 6 0.311 0.247  141 588         88.9         10.7      2031     86.7
-#>   effective_speed whiffs swings takes release_extension
-#> 1           86.65    277   1208  1142              6.20
-#> 2           82.68    244    988  1104              6.04
-#> 3           86.13    322   1016  1022              5.85
-#> 4           85.66    283   1187  1239              6.07
-#> 5           86.53    244    952  1033              5.75
-#> 6           85.49    356   1207  1182              5.56
+#> # A tibble: 6 x 23
+#>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
+#>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
+#> 2 Rich… 1.67e7    2104    448179  2018 0.219 0.181 0.272 0.4   0.297 0.309 0.229
+#> 3 Kent… 6.12e6    2051    628317  2018 0.24  0.159 0.323 0.399 0.304 0.292 0.225
+#> 4 Alex… 6.00e6    2443    622072  2018 0.247 0.116 0.295 0.363 0.288 0.295 0.244
+#> 5 Ross… 5.55e5    1999    548389  2018 0.257 0.174 0.324 0.431 0.309 0.272 0.223
+#> 6 Masa… 2.20e7    2398    547888  2018 0.24  0.182 0.286 0.422 0.307 0.311 0.247
+#> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
+#> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
+#> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
 ## Examples
