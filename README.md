@@ -7,9 +7,13 @@
 
 <!-- badges: end -->
 
-The goal of pitchR is to create an accessible dataset with advanced
-pitcher statistics by season and their corresponding salaries. This
-dataset contains statistics from the 2018, 2019, and 2020 seasons.
+The goal of `pitchR` is to provide an accessible dataset with advanced
+pitching statistics and salary data for individual pitchers. This
+dataset contains data from the 2018, 2019, and 2020 seasons.
+
+One highlight of the package is the inclusion of expected statistics:
+
+<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
 
 ## Installation
 
@@ -87,5 +91,3 @@ pitchR %>%
 Pitchers are fun to visualize\! For example:
 
 <img src="man/figures/README-pitcher_velocity-1-1.png" width="75%" style="display: block; margin: auto;" />
-
-<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />

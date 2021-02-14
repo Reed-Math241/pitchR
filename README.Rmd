@@ -29,7 +29,36 @@ library(pitchR)
 <!-- badges: end -->
 
 
-The goal of pitchR is to create an accessible dataset with advanced pitcher statistics by season and their corresponding salaries.  This dataset contains statistics from the 2018, 2019, and 2020 seasons.
+The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual pitchers. This dataset contains data from the 2018, 2019, and 2020 seasons.
+
+One highlight of the package is the inclusion of expected statistics:
+
+```{r pitcher_woba-1, echo=FALSE, warning=FALSE}
+pitcher <- pitchR %>%
+  group_by(name) %>%
+  summarize(
+    ba = mean(ba),
+    xba = mean(xba),
+    salary = mean(salary)
+    )
+
+ggplot(data = pitcher, aes(x = ba, y = xba)) +
+  geom_point(aes(color = salary), size = 1.5) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
+  scale_color_gradient(low = "cornsilk2", high = "turquoise4") +
+  labs(
+    title = "Batting Average vs Expected Batting Average by Pitcher",
+    subtitle = "Batting Average: hits/# of at bats, expected values are derived by
+comparing the exit velocity and launch angle of batted balls against historical outcomes",
+    x = "Batting Average",
+    y = "Expected Batting Average"
+    ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot"
+    )
+
+```
 
 ## Installation
 
@@ -98,33 +127,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ```
 
-```{r pitcher_woba-1, echo=FALSE, warning=FALSE}
-pitcher <- pitchR %>%
-  group_by(name) %>%
-  summarize(
-    ba = mean(ba),
-    xba = mean(xba),
-    salary = mean(salary)
-    )
 
-ggplot(data = pitcher, aes(x = ba, y = xba)) +
-  geom_point(aes(color = salary), size = 1.5) +
-  geom_abline(slope = 1, intercept = 0, alpha = 0.5) +
-  scale_color_gradient(low = "cornsilk2", high = "turquoise4") +
-  labs(
-    title = "Batting Average vs Expected Batting Average by Pitcher",
-    subtitle = "Batting Average: hits/# of at bats, expected values are derived by
-comparing the exit velocity and launch angle of batted balls against historical outcomes",
-    x = "Batting Average",
-    y = "Expected Batting Average"
-    ) +
-  theme_minimal() +
-  theme(
-    plot.title.position = "plot"
-    )
-
-
-```
 
 
 
