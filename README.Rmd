@@ -75,7 +75,6 @@ pitchR %>%
 Pitchers are fun to visualize! For example:
 
 ```{r}
-
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(
     aes(color = whiffs),
@@ -95,8 +94,13 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
     plot.caption = element_text(hjust = 0, face = "italic"),
     plot.caption.position = "plot"
     )
-
 ```
+
+```{r}
+ggplot(mtcars, aes(x = mpg, y = cyl)) +
+  geom_point()
+```
+
 
 ```{r pitcher_woba, echo=FALSE}
 pitcher <- pitchR %>%

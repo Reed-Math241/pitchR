@@ -117,6 +117,13 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
+``` r
+ggplot(mtcars, aes(x = mpg, y = cyl)) +
+  geom_point()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
     ## `summarise()` ungrouping output (override with `.groups` argument)
 
 ![](README_files/figure-gfm/pitcher_woba-1.png)<!-- -->
