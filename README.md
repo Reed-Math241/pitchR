@@ -62,6 +62,7 @@ Pitchers are fun to summarize\! For example:
 
 ``` r
 library(tidyverse)
+
 pitchR %>% 
   count(year)
 #> # A tibble: 3 x 2
@@ -70,9 +71,10 @@ pitchR %>%
 #> 1  2018   318
 #> 2  2019   276
 #> 3  2020   238
+
 pitchR %>% 
   group_by(year) %>% 
-  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+  summarize(across(where(is.numeric), mean, na.rm = T))
 #> # A tibble: 3 x 22
 #>    year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
 #>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
@@ -85,6 +87,7 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize\! For example:
+
 <img src="man/figures/README-pitcher_velocity-1.png" width="75%" style="display: block; margin: auto;" />
 
 <img src="man/figures/README-pitcher_woba-1.png" width="75%" style="display: block; margin: auto;" />
