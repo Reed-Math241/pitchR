@@ -131,7 +131,7 @@ ggplot(data = pitcher, aes(x = ba, y = xba)) +
 
 ```
 
-Enjoy.
+
 
 
 

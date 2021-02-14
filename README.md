@@ -91,5 +91,3 @@ Pitchers are fun to visualize\! For example:
 <img src="man/figures/README-pitcher_velocity-1-1.png" width="75%" style="display: block; margin: auto;" />
 
 <img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
-
-Enjoy.
