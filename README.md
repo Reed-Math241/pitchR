@@ -70,7 +70,7 @@ salary data.
 ## Examples
 
 By virtue of `pitchR` having data from 3 different years, there is a lot
-of summarizing and comparing the data that can be done. For example:
+of summarizing and comparing that can be done. For example:
 
 ``` r
 library(tidyverse)

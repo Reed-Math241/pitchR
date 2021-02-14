@@ -102,12 +102,15 @@ pitchR %>%
   summarise(across(everything(), ~mean(!is.na(.)))) %>% 
   gather() %>% 
   mutate(key = fct_reorder(key, value)) %>% 
-  ggplot(aes(key, value)) +
+  ggplot(aes(key, value, fill = value > .90)) +
   geom_col(
-    fill = "midnightblue",
+    #fill = "midnightblue",
     alpha = 0.5,
-    color = NA
+    color = NA,
+    show.legend = F
   ) +
+  scale_fill_manual(name = "",
+                    values = c("midnightblue", "cyan4")) +
   geom_text(
     aes(label = scales::percent(value)),
     nudge_y = 0.05,
@@ -129,7 +132,7 @@ pitchR %>%
 
 ## Examples
 
-By virtue of `pitchR` having data from 3 different years, there is a lot of summarizing and comparing the data that can be done. For example:
+By virtue of `pitchR` having data from 3 different years, there is a lot of summarizing and comparing that can be done. For example:
 
 ```{r example, warning=FALSE, message=FALSE}
 library(tidyverse)
