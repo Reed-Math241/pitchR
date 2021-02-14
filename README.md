@@ -101,6 +101,6 @@ pitchR %>%
 #> #   release_extension <dbl>
 ```
 
-We can visualize distributions by year\!
+We can also visualize distributions by year\!
 
 <img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />

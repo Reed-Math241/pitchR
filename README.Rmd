@@ -105,13 +105,13 @@ pitchR %>%
   ggplot(aes(key, value)) +
   geom_col(
     fill = "midnightblue",
-    alpha = 0.8,
+    alpha = 0.5,
     color = NA
   ) +
   geom_text(
     aes(label = scales::percent(value)),
     nudge_y = 0.05,
-    size = 14
+    size = 8
   ) +
   theme_minimal() +
   theme(
@@ -142,7 +142,7 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
-We can visualize distributions by year!
+We can also visualize distributions by year!
 
 ```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8, include=FALSE}
 
