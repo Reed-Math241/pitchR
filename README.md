@@ -61,6 +61,10 @@ head(pitchR)
 #> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
+Here’s a breakdown of how much missing data we have by variable. We
+opted to keep observations with missing values in order to keep our full
+salary data.
+
 <img src="man/figures/README-missing-data-1.png" width="75%" style="display: block; margin: auto;" />
 
 ## Examples

@@ -95,6 +95,8 @@ Here is a simplified version of the raw data; see `?pitchR` for more information
 head(pitchR)
 ```
 
+Here's a breakdown of how much missing data we have by variable. We opted to keep observations with missing values in order to keep our full salary data.
+
 ```{r missing-data, echo=FALSE, fig.width=14, fig.height=8}
 pitchR %>% 
   summarise(across(everything(), ~mean(!is.na(.)))) %>% 
@@ -108,7 +110,8 @@ pitchR %>%
   ) +
   geom_text(
     aes(label = scales::percent(value)),
-    nudge_y = 0.05
+    nudge_y = 0.05,
+    size = 14
   ) +
   theme_minimal() +
   theme(
