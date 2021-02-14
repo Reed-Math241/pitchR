@@ -29,7 +29,7 @@ library(pitchR)
 <!-- badges: end -->
 
 
-The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual pitchers. This dataset contains data from the 2018, 2019, and 2020 seasons.
+The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers. This dataset contains data from the 2018, 2019, and 2020 seasons.
 
 One exciting feature of the package is the inclusion of expected statistics:
 
@@ -109,34 +109,43 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
-Pitchers are fun to visualize! For example:
+Pitchers are fun to visualize! For example
 
-```{r pitcher_velocity-1, echo=FALSE}
+```{r pitcher_velocity-1, echo=FALSE, fig.width=14, fig.height=8}
 
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
   geom_point(
     aes(color = whiffs),
     alpha = 0.4
     ) +
-  theme_minimal() +
-  scale_color_distiller(direction = -1, palette = "YlGn") +
+  scale_color_gradient(low = "cornsilk2", high = "turquoise4") +
   labs(
     title = "Velocity, Spin Rate, and Whiffs",
     subtitle = "Whiffs: Total Number of times a batter swung and whiffed on the player's pitch",
     x = "Velocity (MPH)",
     y = "Spin Rate (Revolutions per Min.)"
     ) +
+  theme_minimal() +
   theme(
-    legend.background = element_rect(fill = "white", color = NA),
     plot.title.position = "plot",
-    plot.caption = element_text(hjust = 0, face= "italic"),
-    plot.caption.position = "plot"
+    plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
+    plot.title = element_text(size = 25),
+    axis.text = element_text(size = 19),
+    axis.title = element_text(size = 19, margin = margin(10, 5, 16, 5)),
+    legend.key.size = unit(2, "cm"),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 20)
     )
 
 ```
 
 
 
+```{r}
+pitchR %>% 
+  distinct(year, name, .keep_all = T) %>% 
+  filter(name == "Clayton Kershaw")
+```
 
 
 

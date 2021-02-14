@@ -94,7 +94,7 @@ pitchR <- rbind(full18, full19, full20)
 
 pitchR <- pitchR %>% 
   dplyr::select(c(-Year, -total_pitches, -pitch_percent, -eff_min_vel)) %>% 
-  distinct(year, name, .keep_all = T)
+  dplyr::distinct(year, name, .keep_all = T)
 
 usethis::use_data(pitchR, overwrite = TRUE)
 

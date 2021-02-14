@@ -8,8 +8,8 @@
 <!-- badges: end -->
 
 The goal of `pitchR` is to provide an accessible dataset with advanced
-pitching statistics and salary data for individual pitchers. This
-dataset contains data from the 2018, 2019, and 2020 seasons.
+pitching statistics and salary data for individual starting pitchers.
+This dataset contains data from the 2018, 2019, and 2020 seasons.
 
 One exciting feature of the package is the inclusion of expected
 statistics:
@@ -73,9 +73,9 @@ pitchR %>%
 #> # A tibble: 3 x 2
 #>    year     n
 #>   <dbl> <int>
-#> 1  2018   318
-#> 2  2019   276
-#> 3  2020   238
+#> 1  2018   226
+#> 2  2019   185
+#> 3  2020   161
 
 pitchR %>% 
   group_by(year) %>% 
@@ -83,14 +83,29 @@ pitchR %>%
 #> # A tibble: 3 x 22
 #>    year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
 #>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1  2018 6.50e6   1867.   548950. 0.254 0.171 0.294 0.426 0.324 0.332 0.255 107. 
-#> 2  2019 7.23e6   2015.   562533. 0.257 0.189 0.301 0.447 0.324 0.330 0.257 118. 
-#> 3  2020 6.87e6    786.   579673. 0.245 0.175 0.288 0.420 0.312 0.312 0.250  43.8
+#> 1  2018 4.76e6   1721.   565129. 0.256 0.172 0.295 0.428 0.326 0.333 0.256  98.9
+#> 2  2019 5.54e6   1903.   578026. 0.259 0.192 0.302 0.451 0.327 0.332 0.259 111. 
+#> 3  2020 5.23e6    757.   595593. 0.243 0.174 0.285 0.417 0.311 0.312 0.249  41.7
 #> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
 #> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
-Pitchers are fun to visualize\! For example:
+Pitchers are fun to visualize\! For example
 
 <img src="man/figures/README-pitcher_velocity-1-1.png" width="75%" style="display: block; margin: auto;" />
+
+``` r
+pitchR %>% 
+  distinct(year, name, .keep_all = T) %>% 
+  filter(name == "Clayton Kershaw")
+#> # A tibble: 3 x 23
+#>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
+#>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
+#> 2 Clay… 3.10e7    2672    477132  2019 0.222 0.173 0.267 0.394 0.281 0.296 0.235
+#> 3 Clay… 3.10e7     888    477132  2020 0.194 0.171 0.232 0.365 0.247 0.263 0.217
+#> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
+#> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
+#> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
+```
