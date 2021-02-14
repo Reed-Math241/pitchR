@@ -70,7 +70,7 @@ head(pitchR)
 You can find these and more code examples for exploring pitchR in
 `vignette("examples")`.
 
-Penguins are fun to summarize\! For example:
+Pitchers are fun to summarize\! For example:
 
 ``` r
 library(tidyverse)
@@ -97,31 +97,6 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize\! For example:
-<img src="man/figures/README-mass-flipper-1.png" width="75%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="75%" />
 
-``` r
-pitcher <- pitchR %>%
-  group_by(name) %>%
-  summarize(ba = mean(ba), xba = mean(xba), salary = mean (salary))
-#> `summarise()` ungrouping output (override with `.groups` argument)
-
-pitcher_woba <- ggplot(data = pitcher,
-                       aes(x = ba,
-                           y = xba)) +
-  geom_point(aes(color = salary)) +
-  geom_abline(slope = 1, intercept = 0) +
-  theme_minimal()+
-  scale_color_distiller(direction = -1, palette = "YlGn") +
-    labs(title = "Batting Average vs Expected Batting Average by Pitcher",
-       subtitle = "Batting Average: hits/# of at bats, expected values are derived by comparing the exit velocity and launch angle of batted balls against historical outcomes",
-       x = "Batting Average",
-       y = "Expected Batting Average") +
-   theme(legend.background = element_rect(fill = "white", color = NA),
-        plot.title.position = "plot",
-        plot.caption = element_text(hjust = 0, face= "italic"),
-        plot.caption.position = "plot")
-
-pitcher_woba
-```
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="75%" />

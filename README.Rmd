@@ -57,7 +57,7 @@ head(pitchR)
 
 You can find these and more code examples for exploring pitchR in `vignette("examples")`.
 
-Penguins are fun to summarize! For example:
+Pitchers are fun to summarize! For example:
 
 ```{r example, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -69,7 +69,7 @@ pitchR %>%
 ```
 
 Pitchers are fun to visualize! For example:
-```{r mass-flipper, warning = FALSE, message = FALSE, echo = FALSE, out.width='75%', fig.retina=2}
+```{r, warning = FALSE, message = FALSE, echo = FALSE, out.width='75%', fig.retina=2}
 pitcher_velocity <- ggplot(data = pitchR, 
                            aes(x = velocity, 
                                y = spin_rate))+
@@ -89,7 +89,7 @@ pitcher_velocity <- ggplot(data = pitchR,
 pitcher_velocity
 ```
 
-```{r}
+```{r, warning = FALSE, message = FALSE, echo = FALSE, out.width='75%', fig.retina=2}
 pitcher <- pitchR %>%
   group_by(name) %>%
   summarize(ba = mean(ba), xba = mean(xba), salary = mean (salary))
