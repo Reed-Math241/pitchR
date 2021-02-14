@@ -1,7 +1,5 @@
 ---
 output: github_document
-editor_options: 
-  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -9,16 +7,16 @@ editor_options:
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
 ```{r, include = FALSE}
-#knitr::opts_chunk$set(
-#  collapse = TRUE,
-#  comment = "#>",
-#  fig.path = "man/figures/README-",
-#  out.width = "75%",
-#  warning = FALSE,
-#  message = FALSE,
-#  fig.retina = 2,
-#  fig.align = 'center'
-#)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "75%",
+  warning = FALSE,
+  message = FALSE,
+  fig.retina = 2,
+  fig.align = 'center'
+)
 library(tidyverse)
 library(pitchR)
 ```
