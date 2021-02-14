@@ -95,6 +95,35 @@ Here is a simplified version of the raw data; see `?pitchR` for more information
 head(pitchR)
 ```
 
+```{r missing-data, echo=FALSE, fig.width=14, fig.height=8}
+pitchR %>% 
+  summarise(across(everything(), ~mean(!is.na(.)))) %>% 
+  gather() %>% 
+  mutate(key = fct_reorder(key, value)) %>% 
+  ggplot(aes(key, value)) +
+  geom_col(
+    fill = "midnightblue",
+    alpha = 0.8,
+    color = NA
+  ) +
+  geom_text(
+    aes(label = scales::percent(value)),
+    nudge_y = 0.05
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(size = 19),
+    axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
+  ) +
+  labs(
+    x = "",
+    y = "% of data present"
+  ) +
+  coord_flip()
+```
+
+
 ## Examples
 
 By virtue of `pitchR` having data from 3 different years, there is a lot of summarizing and comparing the data that can be done. For example:

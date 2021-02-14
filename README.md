@@ -61,6 +61,8 @@ head(pitchR)
 #> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
+<img src="man/figures/README-missing-data-1.png" width="75%" style="display: block; margin: auto;" />
+
 ## Examples
 
 By virtue of `pitchR` having data from 3 different years, there is a lot
@@ -71,25 +73,28 @@ library(tidyverse)
 
 pitchR %>% 
   count(year)
-#> # A tibble: 3 x 2
+#> # A tibble: 4 x 2
 #>    year     n
 #>   <dbl> <int>
 #> 1  2018   229
 #> 2  2019   187
 #> 3  2020   163
+#> 4    NA    83
 
 pitchR %>% 
   group_by(year) %>% 
   summarize(across(where(is.numeric), mean, na.rm = T))
-#> # A tibble: 3 x 22
-#>    year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
-#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1  2018 4.79e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
-#> 2  2019 5.62e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
-#> 3  2020 5.31e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
-#> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
-#> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
-#> #   swings <dbl>, takes <dbl>, release_extension <dbl>
+#> # A tibble: 4 x 22
+#>    year salary pitches player_id      ba     iso   babip     slg    woba   xwoba
+#>   <dbl>  <dbl>   <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+#> 1  2018 4.79e6   1716.   563538.   0.255   0.173   0.294   0.428   0.327   0.333
+#> 2  2019 5.62e6   1906.   576284.   0.259   0.192   0.301   0.451   0.327   0.332
+#> 3  2020 5.31e6    759.   595009.   0.242   0.173   0.284   0.416   0.310   0.312
+#> 4    NA 4.26e6    NaN       NaN  NaN     NaN     NaN     NaN     NaN     NaN    
+#> # … with 12 more variables: xba <dbl>, hits <dbl>, abs <dbl>,
+#> #   launch_speed <dbl>, launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>,
+#> #   effective_speed <dbl>, whiffs <dbl>, swings <dbl>, takes <dbl>,
+#> #   release_extension <dbl>
 ```
 
 We can visualize distributions by year\!
