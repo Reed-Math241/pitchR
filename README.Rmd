@@ -7,15 +7,7 @@ output: github_document
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  out.width = "75%",
-  warning = FALSE,
-  message = FALSE,
-  fig.retina = 2,
-  fig.align = 'center'
-)
+
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(pitchR)
@@ -57,22 +49,7 @@ Here is a simplified version of the raw data; see `?pitchR` for more info:
 head(pitchR)
 ```
 
-## Examples
 
-Pitchers are fun to summarize! For example:
-
-```{r example, warning=FALSE, message=FALSE}
-library(tidyverse)
-
-pitchR %>% 
-  count(year)
-
-pitchR %>% 
-  group_by(year) %>% 
-  summarize(across(where(is.numeric), mean, na.rm = T))
-```
-
-Pitchers are fun to visualize! For example:
 
 ```{r}
 ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
@@ -96,36 +73,6 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
     )
 ```
 
-```{r pitcher_woba, echo=FALSE}
-pitcher <- pitchR %>%
-  group_by(name) %>%
-  summarize(
-    ba = mean(ba),
-    xba = mean(xba),
-    salary = mean (salary)
-    )
-
-ggplot(data = pitcher, aes(x = ba, y = xba)) +
-  geom_point(aes(color = salary)) +
-  geom_abline(slope = 1, intercept = 0) +
-  theme_minimal() +
-  scale_color_distiller(direction = -1, palette = "YlGn") +
-  labs(
-    title = "Batting Average vs Expected Batting Average by Pitcher",
-    subtitle = "Batting Average: hits/# of at bats, expected values are derived by
-    comparing the exit velocity and launch angle of batted balls against historical outcomes",
-    x = "Batting Average",
-    y = "Expected Batting Average"
-    ) +
-  theme(
-    legend.background = element_rect(fill = "white", color = NA),
-    plot.title.position = "plot",
-    plot.caption = element_text(hjust = 0, face= "italic"),
-    plot.caption.position = "plot"
-    )
-
-
-```
 
 
 
