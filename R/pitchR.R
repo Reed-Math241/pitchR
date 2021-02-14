@@ -2,6 +2,10 @@
 #' 
 #' Sabermetric analytics and salaries for starting MLB pitchers from 2018-2020.
 #' 
+#' @docType data
+#' @name pitchR
+#' @usage data(pitchR)
+#' 
 #' @format A tibble of 832 observations and the following 23 variables:
 #' \describe{
 #'  \item{name}{Pitcher name}

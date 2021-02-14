@@ -40,7 +40,7 @@ A tibble of 832 observations and the following 23 variables:
 \url{https://baseballsavant.mlb.com/csv-docs}
 }
 \usage{
-pitchR
+data(pitchR)
 }
 \description{
 Sabermetric analytics and salaries for starting MLB pitchers from 2018-2020.
