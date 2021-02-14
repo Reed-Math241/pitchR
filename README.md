@@ -46,24 +46,21 @@ Here is a simplified version of the raw data; see `?pitchR` for more
 information:
 
 ``` r
-head(pitchR)
-#> # A tibble: 6 x 23
+head(pitchR, 3)
+#> # A tibble: 3 x 23
 #>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
 #>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 #> 1 clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
 #> 2 rich… 1.67e7    2104    448179  2018 0.219 0.181 0.272 0.4   0.297 0.309 0.229
 #> 3 hyun… 7.83e6    1238    547943  2018 0.221 0.14  0.282 0.362 0.268 0.278 0.228
-#> 4 kent… 6.12e6    2051    628317  2018 0.24  0.159 0.323 0.399 0.304 0.292 0.225
-#> 5 alex… 6.00e6    2443    622072  2018 0.247 0.116 0.295 0.363 0.288 0.295 0.244
-#> 6 ross… 5.55e5    1999    548389  2018 0.257 0.174 0.324 0.431 0.309 0.272 0.223
 #> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
 #> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
 #> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
 Here’s a breakdown of how much missing data we have by variable. We
-opted to keep observations with missing values in order to keep our full
-salary data.
+opted to keep observations with missing values in order to keep a full
+version of the salary data.
 
 <img src="man/figures/README-missing-data-1.png" width="75%" style="display: block; margin: auto;" />
 

@@ -92,10 +92,10 @@ data('pitchR')
 Here is a simplified version of the raw data; see `?pitchR` for more information: 
 
 ```{r example-pitchR}
-head(pitchR)
+head(pitchR, 3)
 ```
 
-Here's a breakdown of how much missing data we have by variable. We opted to keep observations with missing values in order to keep our full salary data.
+Here's a breakdown of how much missing data we have by variable. We opted to keep observations with missing values in order to keep a full version of the salary data.
 
 ```{r missing-data, echo=FALSE, fig.width=14, fig.height=8}
 pitchR %>% 
