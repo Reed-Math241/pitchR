@@ -6,8 +6,7 @@ output: github_document
 
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.  -->
 
-```{r, include = FALSE}
-
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(pitchR)
@@ -43,7 +42,7 @@ library(pitchR)
 data('pitchR')
 ``` 
 
-Here is a simplified version of the raw data; see `?pitchR` for more info: 
+Here is a simplified version of the raw data; use `?pitchR` for more info: 
 
 ```{r}
 head(pitchR)

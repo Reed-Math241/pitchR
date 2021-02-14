@@ -37,7 +37,7 @@ library(pitchR)
 data('pitchR')
 ```
 
-Here is a simplified version of the raw data; see `?pitchR` for more
+Here is a simplified version of the raw data; use `?pitchR` for more
 info:
 
 ``` r
