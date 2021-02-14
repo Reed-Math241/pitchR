@@ -31,7 +31,7 @@ library(pitchR)
 
 The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers. This dataset contains data from the 2018, 2019, and 2020 seasons.
 
-One exciting feature of the package is the inclusion of expected statistics!
+One exciting feature of the package is the inclusion of expected statistics:
 
 
 ```{r pitcher_woba-1, echo=FALSE, warning=FALSE, fig.width=14, fig.height=8}
@@ -45,7 +45,7 @@ pitcher <- pitchR %>%
 
 ggplot(data = pitcher, aes(x = ba, y = xba)) +
   geom_point(aes(color = salary), size = 5) +
-  geom_abline(slope = 1, intercept = 0, alpha = 0.3, size = 3) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.3, size = 3, color = "midnightblue") +
   scale_color_gradient(low = "gray80", high = "turquoise4") +
   labs(
     title = "Batting Average vs Expected Batting Average by Pitcher",
