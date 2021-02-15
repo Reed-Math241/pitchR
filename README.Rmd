@@ -29,7 +29,7 @@ library(pitchR)
 <!-- badges: end -->
 
 
-The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers from 2018-2020. As a robust and tidy dataset, `pitchR` provides a great resource for modeling with baseball's most novel advanced statistics ⚾.
+The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers from the 2018-2020 regular seasons. As a robust and tidy dataset, `pitchR` provides a great resource for modeling with baseball's most novel advanced statistics ⚾.
 
 
 ```{r hist, fig.width=14, fig.height=8, echo=FALSE}
