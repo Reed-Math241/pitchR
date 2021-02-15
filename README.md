@@ -41,8 +41,8 @@ library(pitchR)
 data('pitchR')
 ```
 
-Here is a simplified version of the raw data; see `?pitchR` for more
-information:
+Here is a simplified version of the raw data; run `?pitchR` for an
+in-depth description of the data:
 
 ``` r
 head(pitchR, 3)

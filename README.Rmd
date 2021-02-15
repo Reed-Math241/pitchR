@@ -44,7 +44,7 @@ pitchR %>%
   theme(
     plot.title.position = "plot",
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
-    plot.title = element_text(size = 25, margin = margin(10, 0, 20, 0)),
+    plot.title = element_text(size = 25, margin = margin(10, 0, 20, 0), face = "bold"),
     axis.text = element_text(size = 19),
     axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
@@ -74,7 +74,7 @@ library(pitchR)
 data('pitchR')
 ``` 
 
-Here is a simplified version of the raw data; see `?pitchR` for more information: 
+Here is a simplified version of the raw data; run `?pitchR` for an in-depth description of the data: 
 
 ```{r example-pitchR}
 head(pitchR, 3)
@@ -156,7 +156,7 @@ comparing the exit velocity and launch angle of batted balls against historical 
   theme(
     plot.title.position = "plot",
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
-    plot.title = element_text(size = 25),
+    plot.title = element_text(size = 25, face = "bold"),
     axis.text = element_text(size = 19),
     axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
