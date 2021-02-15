@@ -28,8 +28,9 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 ## About the Data
 
-Data were collected and made available by
-[Spotrac](https://www.spotrac.com/mlb/payroll/) and Baseball Savant’s
+Salary data was collected from
+[Spotrac](https://www.spotrac.com/mlb/rankings/2018/salary/starting-pitcher/)
+and advanced pitching statistics from Baseball Savant’s
 [Statcast](https://baseballsavant.mlb.com/statcast_search). The full
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
@@ -95,6 +96,6 @@ pitchR %>%
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
-We can also visualize distributions by year\!
+You can also visualize distributions by year\!
 
 <img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
