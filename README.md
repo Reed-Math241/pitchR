@@ -10,7 +10,12 @@
 The goal of `pitchR` is to provide an accessible dataset with advanced
 pitching statistics and salary data for individual starting pitchers
 from 2018-2020. As a robust and tidy dataset, `pitchR` provides a great
-resource for modeling with baseball’s most novel advanced statistics.
+resource for modeling with baseball’s most novel advanced statistics
+
+``` r
+emo::ji("baseball")
+#> ⚾
+```
 
 <img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
 
