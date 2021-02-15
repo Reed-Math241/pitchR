@@ -29,45 +29,30 @@ library(pitchR)
 <!-- badges: end -->
 
 
-The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers. This dataset contains data from the 2018, 2019, and 2020 seasons.
+The goal of `pitchR` is to provide an accessible dataset with advanced pitching statistics and salary data for individual starting pitchers from 2018-2020. As a robust and tidy dataset, `pitchR` provides a great resource for modeling with baseball's most novel advanced statistics.
 
-One exciting feature of the package is the inclusion of expected statistics:
-
-
-```{r pitcher_woba-1, echo=FALSE, warning=FALSE, fig.width=14, fig.height=8}
-pitcher <- pitchR %>%
-  group_by(name) %>%
-  summarize(
-    ba = mean(ba),
-    xba = mean(xba),
-    salary = mean(salary)
-    )
-
-ggplot(data = pitcher, aes(x = ba, y = xba)) +
-  geom_point(aes(color = salary), size = 5) +
-  geom_abline(slope = 1, intercept = 0, alpha = 0.3, size = 3, color = "midnightblue") +
-  scale_color_gradient(low = "gray80", high = "turquoise4") +
-  labs(
-    title = "Batting Average vs Expected Batting Average by Pitcher",
-    subtitle = "Batting Average: hits/# of at bats, expected values are derived by
-comparing the exit velocity and launch angle of batted balls against historical outcomes",
-    x = "Batting Average",
-    y = "Expected Batting Average",
-    color = "Salary"
-    ) +
+```{r hist, fig.width=14, fig.height=8, echo=FALSE}
+pitchR %>% 
+  ggplot(aes(x = woba, fill = factor(Year))) +
+  geom_density(position = "identity", alpha = 0.5, color = NA) +
+  scale_fill_manual(values = c("grey65", "midnightblue", "cyan4")) +
   theme_minimal() +
+  labs(
+    title = "Density distributions of woba by year",
+    fill = "Year"
+  ) +
   theme(
     plot.title.position = "plot",
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
-    plot.title = element_text(size = 25),
+    plot.title = element_text(size = 25, margin = margin(10, 0, 20, 0)),
     axis.text = element_text(size = 19),
     axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
     legend.text = element_text(size = 15),
     legend.title = element_text(size = 20)
-    )
-
+  )
 ```
+
 
 ## Installation
 
@@ -144,31 +129,42 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
-You can also visualize distributions by year!
+Another exciting feature of the package is the inclusion of expected statistics:
 
-```{r hist, fig.width=14, fig.height=8, echo=FALSE}
-pitchR %>% 
-  ggplot(aes(x = woba, fill = factor(Year))) +
-  geom_density(position = "identity", alpha = 0.5, color = NA) +
-  scale_fill_manual(values = c("grey65", "midnightblue", "cyan4")) +
-  theme_minimal() +
+```{r pitcher_woba-1, echo=FALSE, warning=FALSE, fig.width=14, fig.height=8}
+pitcher <- pitchR %>%
+  group_by(name) %>%
+  summarize(
+    ba = mean(ba),
+    xba = mean(xba),
+    salary = mean(salary)
+    )
+
+ggplot(data = pitcher, aes(x = ba, y = xba)) +
+  geom_point(aes(color = salary), size = 5) +
+  geom_abline(slope = 1, intercept = 0, alpha = 0.3, size = 3, color = "midnightblue") +
+  scale_color_gradient(low = "gray80", high = "turquoise4") +
   labs(
-    title = "Density distributions of woba by year",
-    fill = "Year"
-  ) +
+    title = "Batting Average vs Expected Batting Average by Pitcher",
+    subtitle = "Batting Average: hits/# of at bats, expected values are derived by
+comparing the exit velocity and launch angle of batted balls against historical outcomes",
+    x = "Batting Average",
+    y = "Expected Batting Average",
+    color = "Salary"
+    ) +
+  theme_minimal() +
   theme(
     plot.title.position = "plot",
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
-    plot.title = element_text(size = 25, margin = margin(10, 0, 20, 0)),
+    plot.title = element_text(size = 25),
     axis.text = element_text(size = 19),
     axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
     legend.text = element_text(size = 15),
     legend.title = element_text(size = 20)
-  )
+    )
+
 ```
-
-
 
 
 

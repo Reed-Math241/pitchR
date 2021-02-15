@@ -8,13 +8,11 @@
 <!-- badges: end -->
 
 The goal of `pitchR` is to provide an accessible dataset with advanced
-pitching statistics and salary data for individual starting pitchers.
-This dataset contains data from the 2018, 2019, and 2020 seasons.
+pitching statistics and salary data for individual starting pitchers
+from 2018-2020. As a robust and tidy dataset, `pitchR` provides a great
+resource for modeling with baseball’s most novel advanced statistics.
 
-One exciting feature of the package is the inclusion of expected
-statistics:
-
-<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
 
 ## Installation
 
@@ -96,6 +94,7 @@ pitchR %>%
 #> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
-You can also visualize distributions by year\!
+Another exciting feature of the package is the inclusion of expected
+statistics:
 
-<img src="man/figures/README-hist-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
