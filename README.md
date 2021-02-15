@@ -29,8 +29,8 @@ devtools::install_github("Reed-Math241/pkgDemo")
 ## About the Data
 
 Data were collected and made available by
-[Spotrac](https://www.spotrac.com/mlb/payroll/) and the
-[Savant](https://baseballsavant.mlb.com/statcast_search). The full
+[Spotrac](https://www.spotrac.com/mlb/payroll/) and Baseball Savant’s
+[Statcast](https://baseballsavant.mlb.com/statcast_search). The full
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
@@ -48,11 +48,11 @@ information:
 ``` r
 head(pitchR, 3)
 #> # A tibble: 3 x 23
-#>   name  salary pitches player_id  year    ba   iso babip   slg  woba xwoba   xba
-#>   <chr>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1 clay… 3.56e7    2364    477132  2018 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
-#> 2 rich… 1.67e7    2104    448179  2018 0.219 0.181 0.272 0.4   0.297 0.309 0.229
-#> 3 hyun… 7.83e6    1238    547943  2018 0.221 0.14  0.282 0.362 0.268 0.278 0.228
+#>   name  salary  Year pitches player_id    ba   iso babip   slg  woba xwoba   xba
+#>   <chr>  <dbl> <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 clay… 3.56e7  2018    2364    477132 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
+#> 2 rich… 1.67e7  2018    2104    448179 0.219 0.181 0.272 0.4   0.297 0.309 0.229
+#> 3 hyun… 7.83e6  2018    1238    547943 0.221 0.14  0.282 0.362 0.268 0.278 0.228
 #> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
 #> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
 #> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
@@ -73,29 +73,26 @@ of summarizing and comparing that can be done. For example:
 library(tidyverse)
 
 pitchR %>% 
-  count(year)
-#> # A tibble: 4 x 2
-#>    year     n
+  count(Year)
+#> # A tibble: 3 x 2
+#>    Year     n
 #>   <dbl> <int>
-#> 1  2018   229
-#> 2  2019   187
-#> 3  2020   163
-#> 4    NA    83
+#> 1  2018   251
+#> 2  2019   211
+#> 3  2020   200
 
 pitchR %>% 
-  group_by(year) %>% 
+  group_by(Year) %>% 
   summarize(across(where(is.numeric), mean, na.rm = T))
-#> # A tibble: 4 x 22
-#>    year salary pitches player_id      ba     iso   babip     slg    woba   xwoba
-#>   <dbl>  <dbl>   <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-#> 1  2018 4.79e6   1716.   563538.   0.255   0.173   0.294   0.428   0.327   0.333
-#> 2  2019 5.62e6   1906.   576284.   0.259   0.192   0.301   0.451   0.327   0.332
-#> 3  2020 5.31e6    759.   595009.   0.242   0.173   0.284   0.416   0.310   0.312
-#> 4    NA 4.26e6    NaN       NaN  NaN     NaN     NaN     NaN     NaN     NaN    
-#> # … with 12 more variables: xba <dbl>, hits <dbl>, abs <dbl>,
-#> #   launch_speed <dbl>, launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>,
-#> #   effective_speed <dbl>, whiffs <dbl>, swings <dbl>, takes <dbl>,
-#> #   release_extension <dbl>
+#> # A tibble: 3 x 22
+#>    Year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
+#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2018 4.50e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
+#> 2  2019 5.15e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
+#> 3  2020 5.76e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
+#> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
+#> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
+#> #   swings <dbl>, takes <dbl>, release_extension <dbl>
 ```
 
 We can also visualize distributions by year\!

@@ -80,7 +80,7 @@ devtools::install_github("Reed-Math241/pkgDemo")
 
 ## About the Data
 
-Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and the [Savant](https://baseballsavant.mlb.com/statcast_search). The full scraping and cleaning process is documented [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
+Data were collected and made available by [Spotrac](https://www.spotrac.com/mlb/payroll/) and Baseball Savant's [Statcast](https://baseballsavant.mlb.com/statcast_search). The full scraping and cleaning process is documented [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
 The `pitchR` package contains one dataset, with 23 variables and 662 observations.
 
@@ -137,10 +137,10 @@ By virtue of `pitchR` having data from 3 different years, there is a lot of summ
 library(tidyverse)
 
 pitchR %>% 
-  count(year)
+  count(Year)
 
 pitchR %>% 
-  group_by(year) %>% 
+  group_by(Year) %>% 
   summarize(across(where(is.numeric), mean, na.rm = T))
 ```
 
@@ -176,7 +176,7 @@ ggplot(data = pitchR, aes(x = velocity, y = spin_rate)) +
 
 ```{r hist, fig.width=14, fig.height=8, echo=FALSE}
 pitchR %>% 
-  ggplot(aes(x = woba, fill = factor(year))) +
+  ggplot(aes(x = woba, fill = factor(Year))) +
   geom_density(position = "identity", alpha = 0.5, color = NA) +
   scale_fill_manual(values = c("grey65", "midnightblue", "cyan4")) +
   theme_minimal() +
@@ -187,7 +187,7 @@ pitchR %>%
   theme(
     plot.title.position = "plot",
     plot.subtitle = element_text(margin = margin(10, 0, 20, 0), size = 19),
-    plot.title = element_text(size = 25),
+    plot.title = element_text(size = 25, margin = margin(10, 0, 20, 0)),
     axis.text = element_text(size = 19),
     axis.title = element_text(size = 19, margin = margin(10, 10, 16, 10)),
     legend.key.size = unit(2, "cm"),
