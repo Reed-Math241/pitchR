@@ -30,6 +30,13 @@ pull_salary <- function(x){
            value = as.double(as.character(value)),
            id = dplyr::row_number()) %>%
     dplyr::rename("salary" = value)
+  team <-
+    page %>% 
+    rvest::html_nodes(css = ".rank-position") %>% 
+    rvest::html_text() %>%
+    tibble::as_tibble() %>% 
+    dplyr::mutate(value = str_trim(value, "both")) %>% 
+    dplyr::rename(team = value)
   players <- 
     page %>%
     rvest::html_nodes(css = ".team-name") %>%
@@ -37,10 +44,11 @@ pull_salary <- function(x){
     tibble::as_tibble() %>%
     dplyr::mutate(id = dplyr::row_number()) %>%
     dplyr::rename("name" = value)
-  final <- 
+  final_raw <- 
     players %>%
     dplyr::left_join(salary, by = "id") %>%
     dplyr::select(-id)
+  final <- cbind(final_raw, team)
   return(final)
 }
 
@@ -84,9 +92,9 @@ savant20 <- readr::read_csv("/home/yamamojo/pkgGrpq/data-raw/savant2020.csv") %>
 normalize_name <- function(data){
   data %>% 
   dplyr::mutate(name = stringr::str_remove_all(name, " "),
-         name = stringr::str_remove_all(name, "\\."),
-         name = stringr::str_remove_all(name, "-"),
-         name = stringr::str_to_lower(name))
+                name = stringr::str_remove_all(name, "\\."),
+                name = stringr::str_remove_all(name, "-"),
+                name = stringr::str_to_lower(name))
   }
 
 
