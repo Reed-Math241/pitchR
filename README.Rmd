@@ -71,7 +71,7 @@ The `pitchR` package contains one dataset, with 24 variables and 662 observation
 ```{r showdata}
 library(pitchR)
 data('pitchR')
-devtools::install()
+devtools::load_all()
 ``` 
 
 Here is a simplified version of the data; run `?pitchR` for a more in-depth description: 

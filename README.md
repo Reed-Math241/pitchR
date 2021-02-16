@@ -20,7 +20,7 @@ The development version of `pitchR` is available from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Reed-Math241/pkgDemo")
+# devtools::install_github("Reed-Math241/pkgGrpq")
 ```
 
 ## About the Data
@@ -38,6 +38,7 @@ observations.
 ``` r
 library(pitchR)
 data('pitchR')
+devtools::load_all()
 ```
 
 Here is a simplified version of the data; run `?pitchR` for a more
@@ -62,6 +63,45 @@ opted to keep observations with missing values in order to keep a full
 version of the salary data.
 
 <img src="man/figures/README-missing-data-1.png" width="75%" style="display: block; margin: auto;" />
+
+## Query functions
+
+`pitchR` also has a built in function called `get_salary()` that takes a
+year and a team as it’s inputs and outputs a tibble of each starting
+pitchers salary on that team during that year. Since it uses webscraping
+to do this, the function only accepts team names written in a very
+particular fashion. In general the names are all lowercase and spaces
+are replaced with dashes. You can print the list of all 30 accepted team
+names by using the `list_teams()` function
+
+``` r
+list_teams()
+#>  [1] "los-angeles-dodgers"   "new-york-yankees"      "philadelphia-phillies"
+#>  [4] "houston-astros"        "los-angeles-angels"    "boston-red-sox"       
+#>  [7] "new-york-mets"         "washington-nationals"  "san-diego-padres"     
+#> [10] "st-louis-cardinals"    "chicago-cubs"          "san-francisco-giants" 
+#> [13] "toronto-blue-jays"     "atlanta-braves"        "chicago-white-sox"    
+#> [16] "minnesota-twins"       "cincinnati-reds"       "colorado-rockies"     
+#> [19] "kansas-city-royals"    "arizona-diamondbacks"  "texas-rangers"        
+#> [22] "milwaukee-brewers"     "detroit-tigers"        "seattle-mariners"     
+#> [25] "oakland-athletics"     "tampa-bay-rays"        "miami-marlins"        
+#> [28] "baltimore-orioles"     "pittsburgh-pirates"    "cleveland-indians"
+```
+
+Now, we can use `get_salary()` to pull some salary data of our liking:
+
+``` r
+get_salary(2018, "colorado-rockies")
+#> # A tibble: 6 x 3
+#>   name              team   salary
+#>   <chr>             <chr>   <dbl>
+#> 1 Chad Bettis       COL   2000000
+#> 2 Tyler Anderson    COL    555000
+#> 3 Jon Gray          COL    555000
+#> 4 Kyle Freeland     COL    550000
+#> 5 German Marquez    COL    550000
+#> 6 Antonio Senzatela COL    545000
+```
 
 ## Examples
 
