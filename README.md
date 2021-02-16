@@ -34,7 +34,7 @@ and advanced pitching statistics from Baseball Savant’s
 scraping and cleaning process is documented
 [here](https://github.com/Reed-Math241/pkgGrpq/blob/master/data-raw/DATASET.R).
 
-The `pitchR` package contains one dataset, with 23 variables and 662
+The `pitchR` package contains one dataset, with 24 variables and 662
 observations.
 
 ``` r
@@ -47,15 +47,18 @@ in-depth description of the data:
 
 ``` r
 head(pitchR, 3)
-#> # A tibble: 3 x 23
-#>   name  salary  Year pitches player_id    ba   iso babip   slg  woba xwoba   xba
-#>   <chr>  <dbl> <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1 clay… 3.56e7  2018    2364    477132 0.227 0.139 0.276 0.366 0.272 0.285 0.24 
-#> 2 rich… 1.67e7  2018    2104    448179 0.219 0.181 0.272 0.4   0.297 0.309 0.229
-#> 3 hyun… 7.83e6  2018    1238    547943 0.221 0.14  0.282 0.362 0.268 0.278 0.228
-#> # … with 11 more variables: hits <dbl>, abs <dbl>, launch_speed <dbl>,
-#> #   launch_angle <dbl>, spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>,
-#> #   whiffs <dbl>, swings <dbl>, takes <dbl>, release_extension <dbl>
+#>             name   salary team Year pitches player_id    ba   iso babip   slg
+#> 1 claytonkershaw 35571428  LAD 2018    2364    477132 0.227 0.139 0.276 0.366
+#> 2       richhill 16666666  LAD 2018    2104    448179 0.219 0.181 0.272 0.400
+#> 3     hyunjinryu  7833333  LAD 2018    1238    547943 0.221 0.140 0.282 0.362
+#>    woba xwoba   xba hits abs launch_speed launch_angle spin_rate velocity
+#> 1 0.272 0.285 0.240  139 612         88.0          9.4      2456     86.7
+#> 2 0.297 0.309 0.229  108 493         88.8         15.7      2626     83.3
+#> 3 0.268 0.278 0.228   68 307         86.2         13.2      2052     84.6
+#>   effective_speed whiffs swings takes release_extension
+#> 1           86.65    277   1208  1142              6.20
+#> 2           82.68    244    988  1104              6.04
+#> 3           84.83    156    568   665              6.38
 ```
 
 Here is a breakdown of how much missing data we have by variable. We
@@ -74,12 +77,10 @@ library(tidyverse)
 
 pitchR %>% 
   count(Year)
-#> # A tibble: 3 x 2
-#>    Year     n
-#>   <dbl> <int>
-#> 1  2018   251
-#> 2  2019   211
-#> 3  2020   200
+#>   Year   n
+#> 1 2018 251
+#> 2 2019 211
+#> 3 2020 200
 
 pitchR %>% 
   group_by(Year) %>% 
