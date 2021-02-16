@@ -57,9 +57,9 @@ pitchR %>%
 
 The development version of `pitchR` is available from [GitHub](https://github.com/Reed-Math241/pkgGrpq) with:
 
-``` r
+``` {r}
 # install.packages("devtools")
-devtools::install_github("Reed-Math241/pkgDemo")
+# devtools::install_github("Reed-Math241/pkgGrpq")
 ```
 
 ## About the Data
@@ -71,6 +71,7 @@ The `pitchR` package contains one dataset, with 24 variables and 662 observation
 ```{r showdata}
 library(pitchR)
 data('pitchR')
+devtools::install()
 ``` 
 
 Here is a simplified version of the data; run `?pitchR` for a more in-depth description: 
@@ -110,6 +111,20 @@ pitchR %>%
     y = "% of data present"
   ) +
   coord_flip()
+```
+
+## Query functions
+
+`pitchR` also has a built in function called `get_salary()` that takes a year and a team as it's inputs and outputs a tibble of each starting pitchers salary on that team during that year. Since it uses webscraping to do this, the function only accepts team names written in a very particular fashion. In general the names are all lowercase and spaces are replaced with dashes. You can print the list of all 30 accepted team names by using the `list_teams()` function
+
+```{r}
+list_teams()
+```
+
+Now, we can use `get_salary()` to pull some salary data of our liking:
+
+```{r}
+get_salary(2018, "colorado-rockies")
 ```
 
 
