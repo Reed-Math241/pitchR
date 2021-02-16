@@ -4,8 +4,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -75,7 +73,7 @@ library(pitchR)
 data('pitchR')
 ``` 
 
-Here is a simplified version of the raw data; run `?pitchR` for an in-depth description of the data: 
+Here is a simplified version of the data; run `?pitchR` for a more in-depth description: 
 
 ```{r example-pitchR}
 head(pitchR, 3)

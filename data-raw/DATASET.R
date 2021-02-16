@@ -114,7 +114,8 @@ full20 <- normalize_name(salary20) %>%
 pitchR <- rbind(full18, full19, full20)
 
 pitchR <- pitchR %>% 
-  dplyr::select(c(-year, -total_pitches, -pitch_percent, -eff_min_vel))
+  dplyr::select(c(-year, -total_pitches, -pitch_percent, -eff_min_vel)) %>% 
+  as_tibble()
 
 usethis::use_data(pitchR, overwrite = TRUE)
 
