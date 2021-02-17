@@ -1,4 +1,31 @@
-# a vector of all acceptable team names
+#' @title get_salary
+#'
+#' @description A function to scrape salary data for all pitchers on a specific MLB team from a specific year
+#'
+#' @param year The year of interest
+#' @param team The MLB team name. Use `list_teams()` to see all acceptable names
+#' 
+#' @return A tibble containing player names, team name, and salary.
+#' @examples
+#' get_salary(2018, "oakland-athletics")
+#' @export
+
+get_salary <- function(year, team){
+  if (!is.numeric(year) || !is.character(team)){
+    stop("year must be of type 'numeric' and team must be of type 'character'")
+  }
+  if (!(year %in% c(2018, 2019, 2020))) {
+    stop("year must be in range 2018-2020")
+  }
+  if (!(team %in% teams)){
+    stop("must use a valid team name")
+  }
+  link <- glue::glue("https://www.spotrac.com/mlb/rankings/{year}/salary/{team}/pitching/")
+  
+  data <- pull_salary(link)
+  
+  as_tibble(data)
+}
 
 teams <- c("los-angeles-dodgers", "new-york-yankees",
            "philadelphia-phillies", "houston-astros",
@@ -18,22 +45,7 @@ teams <- c("los-angeles-dodgers", "new-york-yankees",
 
 
 
-get_salary <- function(year, team){
-  if (!is.numeric(year) || !is.character(team)){
-    stop("year must be of type 'numeric' and team must be of type 'character'")
-  }
-  if (!(year %in% c(2018, 2019, 2020))) {
-    stop("year must be in range 2018-2020")
-  }
-  if (!(team %in% teams)){
-    stop("must use a valid team name")
-  }
-  link <- glue::glue("https://www.spotrac.com/mlb/rankings/{year}/salary/{team}/pitching/")
-  
-  data <- pull_salary(link)
-  
-  as_tibble(data)
-}
+
 
   
   
