@@ -7,7 +7,6 @@
 #' 
 #' @return A tibble containing player names, team name, and salary.
 
-
 get_salary <- function(year, team){
   if (!is.numeric(year) || !is.character(team)){
     stop("year must be of type 'numeric' and team must be of type 'character'")

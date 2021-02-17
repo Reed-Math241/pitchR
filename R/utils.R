@@ -1,3 +1,4 @@
+
 list_teams <- function(){
   
   teams <- c("los-angeles-dodgers", "new-york-yankees",

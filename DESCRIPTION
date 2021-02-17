@@ -12,9 +12,10 @@ Depends:
     R (>= 2.10)
 Imports:
     tidyverse,
-    xml2
-    rvest
-    glue
+    xml2,
+    rvest,
+    glue,
+    magrittr
 Suggests: 
     knitr,
     rmarkdown,
