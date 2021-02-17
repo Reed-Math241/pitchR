@@ -28,7 +28,7 @@ get_salary <- function(year, team){
   if (!(team %in% teams)){
     stop("must use a valid team name")
   }
-  link <- glue::glue("https://www.spotrac.com/mlb/rankings/{year}/salary/{team}/starting-pitcher/")
+  link <- glue::glue("https://www.spotrac.com/mlb/rankings/{year}/salary/{team}/pitching/")
   
   data <- pull_salary(link)
   

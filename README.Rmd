@@ -172,7 +172,9 @@ comparing the exit velocity and launch angle of batted balls against historical 
 
 ## Query functions
 
-`pitchR` also has a built in function called `get_salary()` that takes a year and a team as it's inputs and outputs a tibble of each starting pitchers salary on that team during that year. Since it uses webscraping to do this, the function only accepts team names written in a very particular fashion. In general the names are all lowercase and spaces are replaced with dashes. You can print the list of all 30 accepted team names by using the `list_teams()` function.
+`pitchR` also has a built in function called `get_salary()` that takes a year and a team as it's inputs and outputs a tibble of each pitchers salary on that team during that year. This is different from the full dataset in `pitchR` because that only includes starting pitchers.
+
+Since it uses webscraping to do this, the function only accepts team names written in a very particular fashion. In general the names are all lowercase and spaces are replaced with dashes. You can print the list of all 30 accepted team names by using the `list_teams()` function.
 
 ```{r}
 list_teams()

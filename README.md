@@ -102,12 +102,14 @@ statistics:
 ## Query functions
 
 `pitchR` also has a built in function called `get_salary()` that takes a
-year and a team as it’s inputs and outputs a tibble of each starting
-pitchers salary on that team during that year. Since it uses webscraping
-to do this, the function only accepts team names written in a very
-particular fashion. In general the names are all lowercase and spaces
-are replaced with dashes. You can print the list of all 30 accepted team
-names by using the `list_teams()` function.
+year and a team as it’s inputs and outputs a tibble of each pitchers
+salary on that team during that year. This is different from the full
+dataset in `pitchR` because that only includes starting pitchers.
+
+Since it uses webscraping to do this, the function only accepts team
+names written in a very particular fashion. In general the names are all
+lowercase and spaces are replaced with dashes. You can print the list of
+all 30 accepted team names by using the `list_teams()` function.
 
 ``` r
 list_teams()
@@ -127,13 +129,18 @@ Now, we can use `get_salary()` to pull some salary data:
 
 ``` r
 get_salary(2018, "colorado-rockies")
-#> # A tibble: 6 x 3
-#>   name              team   salary
-#>   <chr>             <chr>   <dbl>
-#> 1 Chad Bettis       COL   2000000
-#> 2 Tyler Anderson    COL    555000
-#> 3 Jon Gray          COL    555000
-#> 4 Kyle Freeland     COL    550000
-#> 5 German Marquez    COL    550000
-#> 6 Antonio Senzatela COL    545000
+#> # A tibble: 32 x 3
+#>    name           team    salary
+#>    <chr>          <chr>    <dbl>
+#>  1 Wade Davis     COL   16000000
+#>  2 Bryan Shaw     COL    7500000
+#>  3 Michael Dunn   COL    7000000
+#>  4 Jake McGee     COL    7000000
+#>  5 Adam Ottavino  COL    7000000
+#>  6 Ryan Rolison   COL    2912300
+#>  7 Seung-Hwan Oh  COL    2750000
+#>  8 Chad Bettis    COL    2000000
+#>  9 Chris Rusin    COL    1287500
+#> 10 Tyler Anderson COL     555000
+#> # … with 22 more rows
 ```
