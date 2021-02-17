@@ -6,9 +6,7 @@
 #' @param team The MLB team name. Use `list_teams()` to see all acceptable names
 #' 
 #' @return A tibble containing player names, team name, and salary.
-#' @examples
-#' get_salary(2018, "oakland-athletics")
-#' @export
+
 
 get_salary <- function(year, team){
   if (!is.numeric(year) || !is.character(team)){
@@ -24,7 +22,7 @@ get_salary <- function(year, team){
   
   data <- pull_salary(link)
   
-  as_tibble(data)
+  tibble::as_tibble(data)
 }
 
 teams <- c("los-angeles-dodgers", "new-york-yankees",
