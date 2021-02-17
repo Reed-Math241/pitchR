@@ -63,6 +63,42 @@ version of the salary data.
 
 <img src="man/figures/README-missing-data-1.png" width="75%" style="display: block; margin: auto;" />
 
+## Examples
+
+By virtue of `pitchR` having data from 3 different years, there is a lot
+of summarizing and comparing that can be done. For example:
+
+``` r
+library(tidyverse)
+
+pitchR %>% 
+  count(Year)
+#> # A tibble: 3 x 2
+#>    Year     n
+#>   <dbl> <int>
+#> 1  2018   251
+#> 2  2019   211
+#> 3  2020   200
+
+pitchR %>% 
+  group_by(Year) %>% 
+  summarize(across(where(is.numeric), mean, na.rm = T))
+#> # A tibble: 3 x 22
+#>    Year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
+#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2018 4.50e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
+#> 2  2019 5.15e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
+#> 3  2020 5.76e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
+#> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
+#> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
+#> #   swings <dbl>, takes <dbl>, release_extension <dbl>
+```
+
+Another exciting feature of the package is the inclusion of expected
+statistics:
+
+<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
+
 ## Query functions
 
 `pitchR` also has a built in function called `get_salary()` that takes a
@@ -101,39 +137,3 @@ get_salary(2018, "colorado-rockies")
 #> 5 German Marquez    COL    550000
 #> 6 Antonio Senzatela COL    545000
 ```
-
-## Examples
-
-By virtue of `pitchR` having data from 3 different years, there is a lot
-of summarizing and comparing that can be done. For example:
-
-``` r
-library(tidyverse)
-
-pitchR %>% 
-  count(Year)
-#> # A tibble: 3 x 2
-#>    Year     n
-#>   <dbl> <int>
-#> 1  2018   251
-#> 2  2019   211
-#> 3  2020   200
-
-pitchR %>% 
-  group_by(Year) %>% 
-  summarize(across(where(is.numeric), mean, na.rm = T))
-#> # A tibble: 3 x 22
-#>    Year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
-#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#> 1  2018 4.50e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
-#> 2  2019 5.15e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
-#> 3  2020 5.76e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
-#> # … with 10 more variables: abs <dbl>, launch_speed <dbl>, launch_angle <dbl>,
-#> #   spin_rate <dbl>, velocity <dbl>, effective_speed <dbl>, whiffs <dbl>,
-#> #   swings <dbl>, takes <dbl>, release_extension <dbl>
-```
-
-Another exciting feature of the package is the inclusion of expected
-statistics:
-
-<img src="man/figures/README-pitcher_woba-1-1.png" width="75%" style="display: block; margin: auto;" />
