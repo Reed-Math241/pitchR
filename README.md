@@ -38,7 +38,6 @@ observations.
 ``` r
 library(pitchR)
 data('pitchR')
-devtools::load_all()
 ```
 
 Here is a simplified version of the data; run `?pitchR` for a more
