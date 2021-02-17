@@ -107,7 +107,7 @@ pitchers salary on that team during that year. Since it uses webscraping
 to do this, the function only accepts team names written in a very
 particular fashion. In general the names are all lowercase and spaces
 are replaced with dashes. You can print the list of all 30 accepted team
-names by using the `list_teams()` function
+names by using the `list_teams()` function.
 
 ``` r
 list_teams()
@@ -123,7 +123,7 @@ list_teams()
 #> [28] "baltimore-orioles"     "pittsburgh-pirates"    "cleveland-indians"
 ```
 
-Now, we can use `get_salary()` to pull some salary data of our liking:
+Now, we can use `get_salary()` to pull some salary data:
 
 ``` r
 get_salary(2018, "colorado-rockies")
