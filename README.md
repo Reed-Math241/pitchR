@@ -144,3 +144,5 @@ get_salary(2018, "colorado-rockies")
 #> 10 Tyler Anderson COL     555000
 #> # … with 22 more rows
 ```
+
+For more information on using this function you can run `?get_salary`
