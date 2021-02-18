@@ -11,7 +11,7 @@ get_salary <- function(year, team){
   if (!is.numeric(year) || !is.character(team)){
     stop("year must be of type 'numeric' and team must be of type 'character'")
   }
-  if (!(year %in% c(2018, 2019, 2020))) {
+  if (!(year %in% c(2018, 2019, 2020, 2021))) {
     stop("year must be in range 2018-2020")
   }
   if (!(team %in% teams)){

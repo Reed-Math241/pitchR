@@ -10,7 +10,7 @@ html_team <- team_url %>%
   rvest::html_text() %>%
   janitor::make_clean_names() %>%
   tibble::as_tibble() %>%
-  dplyr::mutate(value = str_replace_all(value, "_", "-")) %>%
+  dplyr::mutate(value = stringr::str_replace_all(value, "_", "-")) %>%
   dplyr::pull(value) 
 
 html_team <- html_team[1:30]
@@ -35,7 +35,7 @@ pull_salary <- function(x){
     rvest::html_nodes(css = ".rank-position") %>% 
     rvest::html_text() %>%
     tibble::as_tibble() %>% 
-    dplyr::mutate(value = str_trim(value, "both")) %>% 
+    dplyr::mutate(value = stringr::str_trim(value, "both")) %>% 
     dplyr::rename(team = value)
   players <- 
     page %>%
