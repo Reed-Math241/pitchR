@@ -41,7 +41,7 @@ pull_salary <- function(x){
     rvest::html_nodes(css = ".rank-position") %>% 
     rvest::html_text() %>%
     tibble::as_tibble() %>% 
-    dplyr::mutate(value = str_trim(value, "both")) %>% 
+    dplyr::mutate(value = stringr::str_trim(value, "both")) %>% 
     dplyr::rename(team = value)
   
   players <- 

@@ -17,6 +17,3 @@ A tibble containing player names, team name, and salary.
 \description{
 A function to scrape salary data for all pitchers on a specific MLB team from a specific year
 }
-\examples{
-get_salary(2018, "oakland-athletics")
-}
