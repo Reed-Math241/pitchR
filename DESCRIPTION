@@ -13,9 +13,7 @@ Depends:
 Imports:
     tidyverse,
     xml2,
-    rvest,
-    glue,
-    magrittr
+    rvest
 Suggests: 
     knitr,
     rmarkdown,
