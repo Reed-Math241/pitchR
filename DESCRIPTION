@@ -11,13 +11,16 @@ LazyData: true
 Depends: 
     R (>= 2.10)
 Imports:
-    tidyverse,
+    glue,
     xml2,
-    rvest
+    rvest,
+    stringr,
+    dplyr,
+    magrittr,
+    ggplot2,
+    janitor
 Suggests: 
     knitr,
     rmarkdown,
-    tibble,
-    ggplot2,
-    dplyr
+    tibble
 RoxygenNote: 7.1.1
