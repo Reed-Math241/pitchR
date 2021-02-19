@@ -10,6 +10,7 @@
 #' \describe{
 #'  \item{name}{Pitcher name}
 #'  \item{salary}{Pitcher salary (US dollars)}
+#'  \item{team}{Abbreviated team name}
 #'  \item{year}{MLB season}
 #'  \item{pitches}{Total number of pitches thrown}
 #'  \item{player_id}{Player MLB ID}

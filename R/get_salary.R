@@ -24,6 +24,7 @@ get_salary <- function(year, team){
   tibble::as_tibble(data)
 }
 
+
 teams <- c("los-angeles-dodgers", "new-york-yankees",
            "philadelphia-phillies", "houston-astros",
            "los-angeles-angels", "boston-red-sox",
@@ -39,8 +40,6 @@ teams <- c("los-angeles-dodgers", "new-york-yankees",
            "oakland-athletics", "tampa-bay-rays",
            "miami-marlins", "baltimore-orioles",
            "pittsburgh-pirates", "cleveland-indians")
-
-
 
 
 
