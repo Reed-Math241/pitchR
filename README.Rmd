@@ -182,7 +182,7 @@ list_teams()
 
 Now, we can use `get_salary()` to pull some salary data. Since the output is a tibble, we can easily plot this data:
 
-```{r}
+```{r bars}
 get_salary(2018, "colorado-rockies") %>% 
   mutate(name = fct_reorder(name, salary)) %>% 
   ggplot(aes(name, salary)) +

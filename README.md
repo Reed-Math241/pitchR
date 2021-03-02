@@ -137,6 +137,6 @@ get_salary(2018, "colorado-rockies") %>%
   theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="man/figures/README-bars-1.png" width="75%" style="display: block; margin: auto;" />
 
 For more information on using this function you can run `?get_salary`
