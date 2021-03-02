@@ -180,10 +180,15 @@ Since it uses webscraping to do this, the function only accepts team names writt
 list_teams()
 ```
 
-Now, we can use `get_salary()` to pull some salary data:
+Now, we can use `get_salary()` to pull some salary data. Since the output is a tibble, we can easily plot this data:
 
 ```{r}
-get_salary(2018, "colorado-rockies")
+get_salary(2018, "colorado-rockies") %>% 
+  mutate(name = fct_reorder(name, salary)) %>% 
+  ggplot(aes(name, salary)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal()
 ```
 
 For more information on using this function you can run `?get_salary`

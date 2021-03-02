@@ -75,7 +75,7 @@ pitchR %>%
   count(Year)
 #> # A tibble: 3 x 2
 #>    Year     n
-#>   <dbl> <int>
+#> * <dbl> <int>
 #> 1  2018   251
 #> 2  2019   211
 #> 3  2020   200
@@ -85,7 +85,7 @@ pitchR %>%
   summarize(across(where(is.numeric), mean, na.rm = T))
 #> # A tibble: 3 x 22
 #>    Year salary pitches player_id    ba   iso babip   slg  woba xwoba   xba  hits
-#>   <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> * <dbl>  <dbl>   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 #> 1  2018 4.50e6   1716.   563538. 0.255 0.173 0.294 0.428 0.327 0.333 0.256  98.6
 #> 2  2019 5.15e6   1906.   576284. 0.259 0.192 0.301 0.451 0.327 0.332 0.259 112. 
 #> 3  2020 5.76e6    759.   595009. 0.242 0.173 0.284 0.416 0.310 0.312 0.249  41.7
@@ -125,24 +125,18 @@ list_teams()
 #> [28] "baltimore-orioles"     "pittsburgh-pirates"    "cleveland-indians"
 ```
 
-Now, we can use `get_salary()` to pull some salary data:
+Now, we can use `get_salary()` to pull some salary data. Since the
+output is a tibble, we can easily plot this data:
 
 ``` r
-get_salary(2018, "colorado-rockies")
-#> # A tibble: 32 x 3
-#>    name           team    salary
-#>    <chr>          <chr>    <dbl>
-#>  1 Wade Davis     COL   16000000
-#>  2 Bryan Shaw     COL    7500000
-#>  3 Michael Dunn   COL    7000000
-#>  4 Jake McGee     COL    7000000
-#>  5 Adam Ottavino  COL    7000000
-#>  6 Ryan Rolison   COL    2912300
-#>  7 Seung-Hwan Oh  COL    2750000
-#>  8 Chad Bettis    COL    2000000
-#>  9 Chris Rusin    COL    1287500
-#> 10 Tyler Anderson COL     555000
-#> # … with 22 more rows
+get_salary(2018, "colorado-rockies") %>% 
+  mutate(name = fct_reorder(name, salary)) %>% 
+  ggplot(aes(name, salary)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal()
 ```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" />
 
 For more information on using this function you can run `?get_salary`
