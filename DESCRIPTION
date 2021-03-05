@@ -5,7 +5,10 @@ Version: 0.1.0
 Author: Josh Yamamoto <yamamojo@reed.edu>, Andy Zhao <andjzhao@reed.edu>, Joshua Park <jopark@reed.edu>
 Maintainer: Josh Yamamoto <yamamojo@reed.edu>
 Description: Statcast data from baseball savant was joined with salary data scraped from sporttrac in order to provide a comprehensive source of both advanced analytics as well as salaries for MLB starting pitchers.
-License: What license is it under?
+License: All Rights Reserved
+
+Copyright (c) Spotrac
+
 Encoding: UTF-8
 LazyData: true
 Depends: 
